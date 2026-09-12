@@ -1,1 +1,2446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
+<meta name="description" content="Website preview for Dr. Talukdar's Dental Care, B-Zone, Durgapur.">
+
+<title>Dr. Talukdar's Dental Care | B-Zone, Durgapur</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--ink:#092f3b;
+--deep:#062b38;
+--teal:#0aa6ad;
+--teal2:#087f8b;
+--cyan:#e9fbfc;
+--pale:#f5fbfc;
+--line:#dcecef;
+--muted:#5c7078;
+--gold:#f2b400;
+--white:#fff;
+--shadow:0 20px 60px rgba(6,45,56,.12);
+--r:24px
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+html{
+scroll-behavior:smooth
+}
+
+body{
+font-family:'DM Sans',system-ui,sans-serif;
+color:var(--ink);
+line-height:1.6;
+background:#fff
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
+
+button,
+input,
+select,
+textarea{
+font:inherit
+}
+
+.wrap{
+max-width:1180px;
+margin:auto;
+padding-left:22px;
+padding-right:22px
+}
+
+/* TOP BAR */
+
+.top{
+background:var(--deep);
+color:#e8fbfc;
+font-size:13px
+}
+
+.top .wrap{
+min-height:40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px
+}
+
+.top a{
+text-decoration:underline;
+text-underline-offset:3px
+}
+
+/* NAVIGATION */
+
+.nav{
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(14px);
+border-bottom:1px solid #eaf1f2
+}
+
+.nav .wrap{
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:25px
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:11px
+}
+
+.logo{
+width:48px;
+height:48px;
+border:2px solid var(--teal);
+border-radius:50% 50% 46% 46%;
+display:grid;
+place-items:center;
+color:var(--teal);
+font-size:24px;
+background:#f5ffff
+}
+
+.brand strong{
+display:block;
+font-family:Manrope;
+font-size:15px;
+line-height:1.15
+}
+
+.brand small{
+display:block;
+color:var(--teal2);
+font-size:10px;
+font-weight:700;
+margin-top:3px
+}
+
+.links{
+display:flex;
+align-items:center;
+gap:25px;
+font-size:14px;
+font-weight:700
+}
+
+.links a{
+color:#36515a
+}
+
+.links a:hover{
+color:var(--teal2)
+}
+
+.navcta,
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:9px;
+border-radius:13px;
+font-weight:800;
+transition:.2s;
+cursor:pointer
+}
+
+.navcta{
+background:var(--teal);
+color:#fff;
+padding:12px 17px
+}
+
+.navcta:hover,
+.primary:hover{
+background:var(--teal2);
+transform:translateY(-1px)
+}
+
+.hamb{
+display:none;
+background:none;
+border:0;
+font-size:27px;
+color:var(--deep)
+}
+
+/* HERO */
+
+.hero{
+background:
+radial-gradient(circle at 85% 25%,#c9f5f6 0,transparent 34%),
+linear-gradient(125deg,#eefbfc 0%,#fff 55%,#f2fbfc 100%)
+}
+
+.hero .wrap{
+padding-top:76px;
+padding-bottom:60px;
+display:grid;
+grid-template-columns:1.03fr .97fr;
+align-items:center;
+gap:48px
+}
+
+.eyebrow{
+font-size:12px;
+letter-spacing:.16em;
+text-transform:uppercase;
+font-weight:900;
+color:var(--teal2)
+}
+
+h1,
+h2,
+h3{
+font-family:Manrope,sans-serif
+}
+
+h1{
+font-size:clamp(43px,5.5vw,68px);
+line-height:1.03;
+letter-spacing:-.05em;
+margin:12px 0 20px
+}
+
+.lead{
+font-size:18px;
+color:var(--muted);
+max-width:650px
+}
+
+.actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin:27px 0
+}
+
+.btn{
+padding:14px 19px;
+border:1px solid transparent
+}
+
+.primary{
+background:var(--teal);
+color:#fff;
+box-shadow:0 12px 30px rgba(10,166,173,.2)
+}
+
+.secondary{
+background:#fff;
+border-color:#cde4e7;
+color:var(--deep)
+}
+
+.mini-trust{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+font-size:13px;
+font-weight:700;
+color:#35535c
+}
+
+.mini-trust span{
+display:flex;
+align-items:center;
+gap:7px
+}
+
+.mini-trust b{
+color:var(--teal2)
+}
+
+/* HERO VISUAL */
+
+.visual{
+min-height:515px;
+border-radius:34px;
+position:relative;
+overflow:hidden;
+background:linear-gradient(145deg,#d2f6f7,#fff 52%,#dff4f5);
+box-shadow:var(--shadow);
+border:1px solid #d5edef
+}
+
+.visual:before{
+content:"";
+position:absolute;
+width:430px;
+height:430px;
+border-radius:50%;
+background:rgba(255,255,255,.7);
+right:-100px;
+top:-110px
+}
+
+.chair{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-47%);
+font-size:180px;
+filter:drop-shadow(0 20px 25px rgba(0,0,0,.08))
+}
+
+.photo-note{
+position:absolute;
+left:25px;
+top:24px;
+background:rgba(255,255,255,.92);
+padding:11px 14px;
+border-radius:14px;
+font-size:12px;
+font-weight:800
+}
+
+.rating-card{
+position:absolute;
+left:24px;
+bottom:24px;
+background:#fff;
+padding:17px 18px;
+border-radius:18px;
+box-shadow:0 14px 35px rgba(6,45,56,.16)
+}
+
+.rating-card strong{
+font-size:25px
+}
+
+.stars{
+color:var(--gold);
+letter-spacing:2px
+}
+
+.rating-card small{
+display:block;
+color:var(--muted);
+margin-top:2px
+}
+
+.badge{
+position:absolute;
+right:22px;
+bottom:26px;
+background:var(--deep);
+color:#fff;
+padding:14px 16px;
+border-radius:16px;
+font-size:13px;
+font-weight:800
+}
+
+.badge span{
+display:block;
+color:#aeeef0;
+font-size:11px;
+margin-top:2px
+}
+
+/* FACTS */
+
+.strip{
+background:#fff;
+border-bottom:1px solid var(--line)
+}
+
+.strip .wrap{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:0
+}
+
+.fact{
+padding:21px 18px;
+border-right:1px solid var(--line);
+text-align:center
+}
+
+.fact:last-child{
+border:0
+}
+
+.fact strong{
+display:block;
+font-family:Manrope;
+font-size:20px;
+color:var(--deep)
+}
+
+.fact span{
+font-size:12px;
+color:var(--muted)
+}
+
+/* SECTIONS */
+
+.section{
+padding:82px 0
+}
+
+.alt{
+background:var(--pale)
+}
+
+.head{
+text-align:center;
+max-width:730px;
+margin:0 auto 42px
+}
+
+.head h2{
+font-size:clamp(31px,4vw,46px);
+line-height:1.1;
+letter-spacing:-.035em;
+margin:8px 0 11px
+}
+
+.head p{
+color:var(--muted)
+}
+
+/* SERVICE CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:17px
+}
+
+.card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:20px;
+padding:25px;
+transition:.2s
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow);
+border-color:#b8e0e4
+}
+
+.ic{
+width:48px;
+height:48px;
+border-radius:15px;
+background:var(--cyan);
+display:grid;
+place-items:center;
+color:var(--teal2);
+font-size:22px;
+margin-bottom:16px
+}
+
+.card h3{
+font-size:18px;
+margin-bottom:6px
+}
+
+.card p{
+font-size:14px;
+color:var(--muted)
+}
+
+.card .more{
+display:inline-block;
+margin-top:12px;
+color:var(--teal2);
+font-size:12px;
+font-weight:800
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:55px;
+align-items:center
+}
+
+.about h2{
+font-size:clamp(32px,4vw,47px);
+line-height:1.08;
+letter-spacing:-.04em;
+margin:8px 0 17px
+}
+
+.about p{
+color:var(--muted)
+}
+
+.checks{
+display:grid;
+gap:11px;
+margin:23px 0
+}
+
+.checks div{
+display:flex;
+gap:10px
+}
+
+.checks b{
+color:var(--teal2)
+}
+
+.profile{
+background:#fff;
+border:1px solid var(--line);
+border-radius:28px;
+padding:25px;
+box-shadow:var(--shadow)
+}
+
+.doctor{
+display:flex;
+gap:18px;
+align-items:center;
+padding-bottom:20px;
+border-bottom:1px solid var(--line)
+}
+
+.avatar{
+width:82px;
+height:82px;
+border-radius:20px;
+background:linear-gradient(145deg,#d6f7f8,#edfafa);
+display:grid;
+place-items:center;
+font-size:40px
+}
+
+.doctor h3{
+font-size:22px
+}
+
+.doctor p{
+font-size:13px;
+margin-top:3px
+}
+
+.profile-list{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:20px
+}
+
+.pbox{
+background:var(--pale);
+border-radius:15px;
+padding:14px
+}
+
+.pbox strong{
+display:block;
+font-size:16px
+}
+
+.pbox span{
+font-size:11px;
+color:var(--muted)
+}
+
+/* REVIEWS */
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px
+}
+
+.review{
+background:#fff;
+border:1px solid var(--line);
+border-radius:20px;
+padding:24px
+}
+
+.review p{
+color:#405a63;
+font-size:14px
+}
+
+.review small{
+display:block;
+margin-top:15px;
+color:var(--muted);
+font-weight:700
+}
+
+.review a{
+display:inline-block;
+margin-top:18px;
+color:var(--teal2);
+font-size:13px;
+font-weight:800
+}
+
+/* APPOINTMENT */
+
+.cta{
+background:linear-gradient(120deg,var(--deep),#075469);
+color:#fff
+}
+
+.cta .wrap{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:start
+}
+
+.cta h2{
+font-size:clamp(34px,4vw,50px);
+line-height:1.05;
+margin:8px 0 14px
+}
+
+.cta p{
+color:#cce8ec
+}
+
+.quick{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:23px
+}
+
+.quick .secondary{
+background:#fff
+}
+
+.form{
+background:#fff;
+color:var(--ink);
+padding:25px;
+border-radius:24px;
+box-shadow:0 20px 55px rgba(0,0,0,.15)
+}
+
+.fields{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:13px
+}
+
+.field{
+display:grid;
+gap:6px;
+margin-bottom:13px
+}
+
+.field.full{
+grid-column:1/-1
+}
+
+.field label{
+font-size:12px;
+font-weight:800
+}
+
+.field input,
+.field select,
+.field textarea{
+width:100%;
+border:1px solid #d6e6e8;
+border-radius:11px;
+padding:12px 13px;
+background:#fbfefe;
+outline:none
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+border-color:var(--teal);
+box-shadow:0 0 0 3px rgba(10,166,173,.1)
+}
+
+.note{
+font-size:10px;
+color:#71838a;
+margin-top:9px
+}
+
+/* CONTACT */
+
+.contact{
+display:grid;
+grid-template-columns:.85fr 1.15fr;
+gap:20px
+}
+
+.contact-card,
+.hours,
+.map{
+background:#fff;
+border:1px solid var(--line);
+border-radius:22px;
+padding:25px
+}
+
+.contact-item{
+display:flex;
+gap:13px;
+margin:17px 0
+}
+
+.contact-item .ic{
+flex:0 0 44px;
+margin:0
+}
+
+.contact-item b{
+font-size:13px
+}
+
+.contact-item div:last-child{
+font-size:13px;
+color:#4c626a
+}
+
+.hours table{
+width:100%;
+border-collapse:collapse;
+margin-top:8px;
+font-size:13px
+}
+
+.hours td{
+padding:8px 0;
+border-bottom:1px solid #edf3f4
+}
+
+.hours td:last-child{
+text-align:right;
+font-weight:700
+}
+
+.hours .closed{
+color:#9a4b4b
+}
+
+.map{
+min-height:280px;
+display:grid;
+place-items:center;
+text-align:center;
+background:linear-gradient(145deg,#eaf9fa,#f9ffff)
+}
+
+.map-pin{
+font-size:55px
+}
+
+.map p{
+color:var(--muted);
+font-size:13px;
+max-width:440px;
+margin:7px auto 15px
+}
+
+/* FAQ */
+
+.faq{
+display:grid;
+gap:11px;
+max-width:850px;
+margin:auto
+}
+
+.faq details{
+border:1px solid var(--line);
+border-radius:16px;
+padding:16px 18px;
+background:#fff
+}
+
+.faq summary{
+cursor:pointer;
+font-weight:800
+}
+
+.faq p{
+color:var(--muted);
+font-size:14px;
+padding-top:10px
+}
+
+/* NOTICE */
+
+.notice{
+margin-top:30px;
+padding:15px 17px;
+border-radius:15px;
+background:#fff8e6;
+border:1px solid #f4dfad;
+color:#735b1d;
+font-size:12px
+}
+
+.notice strong{
+display:block;
+margin-bottom:3px
+}
+
+/* FOOTER */
+
+footer{
+background:#042c39;
+color:#d5e8eb;
+padding:38px 0
+}
+
+.footer{
+display:flex;
+justify-content:space-between;
+gap:25px;
+align-items:center
+}
+
+.footer b{
+font-family:Manrope
+}
+
+.footer small{
+display:block;
+color:#9cc2c9;
+margin-top:5px
+}
+
+.flinks{
+display:flex;
+gap:18px;
+font-size:12px
+}
+
+.credit{
+border-top:1px solid rgba(255,255,255,.12);
+margin-top:25px;
+padding-top:18px;
+font-size:11px;
+color:#90b5bc;
+display:flex;
+justify-content:space-between;
+gap:20px
+}
+
+/* FLOATING BUTTONS */
+
+.floating{
+position:fixed;
+right:18px;
+bottom:18px;
+z-index:40;
+display:flex;
+flex-direction:column;
+gap:8px
+}
+
+.floatbtn{
+width:52px;
+height:52px;
+border-radius:50%;
+display:grid;
+place-items:center;
+color:#fff;
+font-size:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.18)
+}
+
+.floatwa{
+background:#20b15a
+}
+
+.floatcall{
+background:var(--teal)
+}
+
+.toast{
+position:fixed;
+right:18px;
+bottom:85px;
+background:var(--deep);
+color:#fff;
+padding:14px 17px;
+border-radius:13px;
+box-shadow:var(--shadow);
+transform:translateY(150px);
+transition:.25s;
+z-index:60;
+font-size:13px
+}
+
+.toast.show{
+transform:none
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+display:none
+}
+
+.mobile-menu a{
+display:block;
+padding:12px 22px;
+border-top:1px solid #edf2f3;
+font-weight:700
+}
+
+.mobile-menu.open{
+display:block
+}
+
+/* TABLET */
+
+@media(max-width:950px){
+
+.links{
+display:none
+}
+
+.hamb{
+display:block
+}
+
+.hero .wrap,
+.about,
+.cta .wrap,
+.contact{
+grid-template-columns:1fr
+}
+
+.visual{
+min-height:420px
+}
+
+.grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+.reviews{
+grid-template-columns:1fr
+}
+
+.strip .wrap{
+grid-template-columns:repeat(2,1fr)
+}
+
+.fact:nth-child(2){
+border-right:0
+}
+
+.fact:nth-child(-n+2){
+border-bottom:1px solid var(--line)
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.wrap{
+padding-left:16px;
+padding-right:16px
+}
+
+.top .wrap{
+min-height:58px;
+align-items:flex-start;
+justify-content:center;
+flex-direction:column;
+gap:1px
+}
+
+.nav .wrap{
+height:68px;
+padding-left:16px;
+padding-right:16px
+}
+
+.hero .wrap{
+padding-top:52px
+}
+
+.hero h1{
+font-size:45px
+}
+
+.lead{
+font-size:16px
+}
+
+.visual{
+min-height:350px
+}
+
+.chair{
+font-size:120px
+}
+
+.badge{
+right:13px;
+bottom:14px
+}
+
+.rating-card{
+left:13px;
+bottom:14px
+}
+
+.grid{
+grid-template-columns:1fr
+}
+
+.strip .wrap{
+grid-template-columns:1fr 1fr
+}
+
+.fact{
+padding:16px 8px
+}
+
+.section{
+padding:62px 0
+}
+
+.fields{
+grid-template-columns:1fr
+}
+
+.field.full{
+grid-column:auto
+}
+
+.profile-list{
+grid-template-columns:1fr
+}
+
+.footer{
+flex-direction:column;
+text-align:center
+}
+
+.credit{
+flex-direction:column;
+text-align:center
+}
+
+.flinks{
+justify-content:center;
+flex-wrap:wrap
+}
+
+.floating{
+right:12px;
+bottom:12px
+}
+
+.floatbtn{
+width:48px;
+height:48px
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="top">
+
+<div class="wrap">
+
+<span>📍 B-Zone, Durgapur, West Bengal</span>
+
+<span>
+📞
+<a href="tel:+919990777179">+91 99907 77179</a>
+&nbsp;•&nbsp;
+<b>Appointment enquiries welcome</b>
+</span>
+
+</div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<header class="nav">
+
+<div class="wrap">
+
+<a class="brand" href="#home">
+
+<div class="logo">🦷</div>
+
+<div>
+
+<strong>
+Dr. Talukdar's<br>
+Dental Care
+</strong>
+
+<small>
+Healthy smiles. Happier lives.
+</small>
+
+</div>
+
+</a>
+
+
+<nav class="links">
+
+<a href="#home">Home</a>
+<a href="#services">Treatments</a>
+<a href="#doctor">About</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+
+<a class="navcta" href="#appointment">
+Book Appointment
+</a>
+
+</nav>
+
+
+<button class="hamb" id="hamb">
+☰
+</button>
+
+</div>
+
+
+<div class="mobile-menu" id="mobile">
+
+<a href="#home">Home</a>
+<a href="#services">Treatments</a>
+<a href="#doctor">About</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+<a href="#appointment">Book Appointment</a>
+
+</div>
+
+</header>
+
+
+<main id="home">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="wrap">
+
+<div>
+
+<div class="eyebrow">
+Dental care in B-Zone, Durgapur
+</div>
+
+<h1>
+Care that puts your smile first.
+</h1>
+
+<p class="lead">
+
+A professional dental-care website concept designed around what patients need first: clear treatments, trusted information, easy appointment requests and a direct way to reach the clinic.
+
+</p>
+
+
+<div class="actions">
+
+<a class="btn primary" href="#appointment">
+📅 Request an Appointment
+</a>
+
+<a class="btn secondary" href="tel:+919990777179">
+📞 Call the Clinic
+</a>
+
+</div>
+
+
+<div class="mini-trust">
+
+<span>
+<b>✓</b>
+Patient-focused care
+</span>
+
+<span>
+<b>✓</b>
+Modern treatment approach
+</span>
+
+<span>
+<b>✓</b>
+Family dental care
+</span>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="photo-note">
+Website preview • prepared for Dr. Talukdar's Dental Care
+</div>
+
+<div class="chair">
+🦷
+</div>
+
+<div class="rating-card">
+
+<div>
+
+<strong>5.0</strong>
+
+<span class="stars">
+★★★★★
+</span>
+
+</div>
+
+<small>
+140+ ratings on current local listings
+</small>
+
+</div>
+
+
+<div class="badge">
+
+Since 2020
+
+<span>
+Dental care in Durgapur
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FACTS -->
+
+<section class="strip">
+
+<div class="wrap">
+
+<div class="fact">
+
+<strong>5.0 ★</strong>
+
+<span>
+140+ ratings on current listing
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<strong>Since 2020</strong>
+
+<span>
+Clinic establishment reported online
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<strong>₹200</strong>
+
+<span>
+Listed consultation fee*
+</span>
+
+</div>
+
+
+<div class="fact">
+
+<strong>WhatsApp</strong>
+
+<span>
+Quick appointment enquiry
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+<div class="wrap">
+
+<div class="head">
+
+<div class="eyebrow">
+Treatments & services
+</div>
+
+<h2>
+Find the right dental care without searching through a crowded page.
+</h2>
+
+<p>
+Services below are based on current public business listings and should be confirmed by the clinic before the website goes live.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<article class="card">
+
+<div class="ic">🦷</div>
+
+<h3>
+General Dental Care
+</h3>
+
+<p>
+Routine check-ups, preventive care and everyday oral-health needs.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">✨</div>
+
+<h3>
+Teeth Cleaning
+</h3>
+
+<p>
+Professional cleaning and preventive dental care.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">◉</div>
+
+<h3>
+Root Canal Treatment
+</h3>
+
+<p>
+Root canal treatment for teeth requiring endodontic care.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">▾</div>
+
+<h3>
+Surgical Extraction
+</h3>
+
+<p>
+Tooth extraction when clinically indicated.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">✦</div>
+
+<h3>
+Braces & Aligners
+</h3>
+
+<p>
+Orthodontic options including braces and clear aligners.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">◈</div>
+
+<h3>
+Dental Crowns
+</h3>
+
+<p>
+Restorative options including crowns and zirconia crowns.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">◌</div>
+
+<h3>
+Cosmetic Dentistry
+</h3>
+
+<p>
+Smile-focused services including teeth whitening and aesthetic care.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">⌁</div>
+
+<h3>
+Laser Dentistry
+</h3>
+
+<p>
+Laser dentistry is listed among the clinic's public services.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">◉</div>
+
+<h3>
+Computerized Digital X-Ray
+</h3>
+
+<p>
+Digital X-ray is listed as an available clinic facility.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="ic">♡</div>
+
+<h3>
+Care for All Age Groups
+</h3>
+
+<p>
+Public listings describe personalized dental care for different age groups.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT / DOCTOR -->
+
+<section class="section alt" id="doctor">
+
+<div class="wrap about">
+
+
+<div>
+
+<div class="eyebrow">
+About the clinic
+</div>
+
+<h2>
+A stronger online first impression for a clinic people already trust.
+</h2>
+
+<p>
+Public listings describe Dr. Talukdar's Dental Care as a B-Zone dental clinic offering routine, restorative, orthodontic, cosmetic and implant-related services, with a patient-focused approach.
+</p>
+
+
+<div class="checks">
+
+<div>
+<b>✓</b>
+<span>
+Dr. Bishwajit Talukdar is named in a current business listing.
+</span>
+</div>
+
+<div>
+<b>✓</b>
+<span>
+Clinic establishment is reported as 2020 by current business listings.
+</span>
+</div>
+
+<div>
+<b>✓</b>
+<span>
+Wheelchair-accessible entrance and seating are listed.
+</span>
+</div>
+
+<div>
+<b>✓</b>
+<span>
+Google Pay/UPI-style digital payment options are reported by a local listing.
+</span>
+</div>
+
+</div>
+
+
+<a class="btn primary" href="#appointment">
+Talk to the Clinic
+</a>
+
+</div>
+
+
+<div class="profile">
+
+
+<div class="doctor">
+
+<div class="avatar">
+👨‍⚕️
+</div>
+
+<div>
+
+<h3>
+Dr. Bishwajit Talukdar
+</h3>
+
+<p>
+Dental care • Dr. Talukdar's Dental Care
+</p>
+
+</div>
+
+</div>
+
+
+<div class="profile-list">
+
+
+<div class="pbox">
+
+<strong>
+B-Zone
+</strong>
+
+<span>
+Durgapur, West Bengal
+</span>
+
+</div>
+
+
+<div class="pbox">
+
+<strong>
+Stall No. 159
+</strong>
+
+<span>
+Sarat Chandra Avenue / Chandidas Ave
+</span>
+
+</div>
+
+
+<div class="pbox">
+
+<strong>
++91 99907 77179
+</strong>
+
+<span>
+Clinic contact
+</span>
+
+</div>
+
+
+<div class="pbox">
+
+<strong>
+5.0 ★
+</strong>
+
+<span>
+140+ current listing ratings
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="notice">
+
+<strong>
+For the live version
+</strong>
+
+Doctor credentials, exact treatment list, clinic photographs, logo, hours and consultation fee should be confirmed directly with the clinic before publishing.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="section" id="reviews">
+
+<div class="wrap">
+
+<div class="head">
+
+<div class="eyebrow">
+Patient feedback
+</div>
+
+<h2>
+Social proof, presented responsibly.
+</h2>
+
+<p>
+The current local listing shows a 5.0 rating with 140+ ratings and patient feedback mentioning professional care, good treatment, hygiene and facilities.
+</p>
+
+</div>
+
+
+<div class="reviews">
+
+
+<article class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Best dental clinic in Durgapur, with best equipments.”
+</p>
+
+<small>
+Isha • Aug 2024
+</small>
+
+</article>
+
+
+<article class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“On time service without any delay” and a positive treatment experience.
+</p>
+
+<small>
+Deepa Kumari • Jul 2024
+</small>
+
+</article>
+
+
+<article class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+Recent listing feedback highlights accurate diagnosis, sterilised equipment, easy booking and gentle care.
+</p>
+
+<small>
+Subho • Jun 2025
+</small>
+
+</article>
+
+
+</div>
+
+
+<div style="text-align:center;margin-top:24px">
+
+<a
+class="btn secondary"
+target="_blank"
+href="https://www.google.com/search?q=Dr+Talukdar%27s+Dental+Care+Durgapur+reviews"
+>
+
+View public reviews ↗
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- APPOINTMENT -->
+
+<section class="section cta" id="appointment">
+
+<div class="wrap">
+
+
+<div>
+
+<div class="eyebrow" style="color:#9eeef1">
+Appointment
+</div>
+
+<h2>
+Turn a website visit into a real enquiry.
+</h2>
+
+<p>
+Patients can choose a service, preferred date and share their details. The demo then opens a ready-to-send WhatsApp request to the clinic.
+</p>
+
+
+<div class="quick">
+
+<a
+class="btn secondary"
+data-wa="Hello Dr. Talukdar's Dental Care, I would like to enquire about an appointment."
+>
+💬 WhatsApp
+</a>
+
+
+<a
+class="btn secondary"
+href="tel:+919990777179"
+>
+📞 +91 99907 77179
+</a>
+
+</div>
+
+</div>
+
+
+<form class="form" id="form">
+
+
+<div class="fields">
+
+
+<div class="field">
+
+<label>
+Patient name
+</label>
+
+<input
+name="name"
+required
+placeholder="Enter your name"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Mobile number
+</label>
+
+<input
+name="mobile"
+required
+inputmode="tel"
+placeholder="10-digit mobile number"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Interested treatment
+</label>
+
+<select
+name="service"
+required
+>
+
+<option value="">
+Select treatment
+</option>
+
+<option>
+General dental care
+</option>
+
+<option>
+Teeth cleaning
+</option>
+
+<option>
+Root canal treatment
+</option>
+
+<option>
+Tooth extraction
+</option>
+
+<option>
+Braces / Aligners
+</option>
+
+<option>
+Dental crown
+</option>
+
+<option>
+Dental implant
+</option>
+
+<option>
+Teeth whitening
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>
+Preferred date
+</label>
+
+<input
+name="date"
+type="date"
+required
+>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+Message (optional)
+</label>
+
+<textarea
+name="message"
+rows="3"
+placeholder="Tell us briefly what you need help with"
+></textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+class="btn primary"
+style="width:100%"
+>
+
+Send Appointment Request on WhatsApp →
+
+</button>
+
+
+<div class="note">
+
+This is a website demo. The final appointment workflow can be connected to the clinic's preferred system.
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section alt" id="contact">
+
+<div class="wrap">
+
+
+<div class="head">
+
+<div class="eyebrow">
+Visit & contact
+</div>
+
+<h2>
+Everything a patient needs, one tap away.
+</h2>
+
+</div>
+
+
+<div class="contact">
+
+
+<div class="contact-card">
+
+
+<div class="contact-item">
+
+<div class="ic">
+📍
+</div>
+
+<div>
+
+<b>
+Clinic address
+</b>
+
+<br>
+
+Stall No.-159, Sarat Chandra Avenue, Chandidas Ave, B-Zone, Durgapur, West Bengal 713205
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="ic">
+📞
+</div>
+
+<div>
+
+<b>
+Phone
+</b>
+
+<br>
+
+<a href="tel:+919990777179">
++91 99907 77179
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="ic">
+💬
+</div>
+
+<div>
+
+<b>
+WhatsApp
+</b>
+
+<br>
+
+Send an appointment enquiry directly.
+
+</div>
+
+</div>
+
+
+<a
+class="btn primary"
+data-wa="Hello Dr. Talukdar's Dental Care, I would like to enquire about an appointment."
+>
+
+Chat on WhatsApp
+
+</a>
+
+
+</div>
+
+
+<div>
+
+
+<div class="hours">
+
+<h3>
+Clinic hours shown on current local listing
+</h3>
+
+
+<table>
+
+<tr>
+<td>Mon</td>
+<td>9:30 AM–1:30 PM, 5:30–8:30 PM</td>
+</tr>
+
+<tr>
+<td>Tue</td>
+<td>9:30 AM–1:30 PM, 5:30–8:30 PM</td>
+</tr>
+
+<tr>
+<td>Wed</td>
+<td>9:30 AM–1:30 PM, 5:30–8:30 PM</td>
+</tr>
+
+<tr>
+<td>Thu</td>
+<td class="closed">Closed</td>
+</tr>
+
+<tr>
+<td>Fri</td>
+<td>9:30 AM–1:30 PM, 5:30–8:30 PM</td>
+</tr>
+
+<tr>
+<td>Sat</td>
+<td>9:30 AM–1:30 PM, 5:30–8:30 PM</td>
+</tr>
+
+<tr>
+<td>Sun</td>
+<td>9:30 AM–1:30 PM, 5:30–8:30 PM</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div
+class="map"
+style="margin-top:18px"
+>
+
+<div>
+
+<div class="map-pin">
+📍
+</div>
+
+<h3>
+B-Zone, Durgapur
+</h3>
+
+<p>
+Near New Purnima Sweets • Stall No.-159, Sarat Chandra Avenue, Chandidas Ave
+</p>
+
+
+<a
+class="btn secondary"
+target="_blank"
+href="https://www.google.com/maps/search/?api=1&query=Dr+Talukdar%27s+Dental+Care%2C+B-Zone%2C+Durgapur"
+>
+
+Open in Google Maps ↗
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<strong>
+Data check before launch
+</strong>
+
+Some public directories show the PIN as 713202 while other current listings show 713205, and hours/ratings can change. The clinic should confirm these details before this demo becomes the live website.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section" id="faq">
+
+<div class="wrap">
+
+
+<div class="head">
+
+<div class="eyebrow">
+Patient questions
+</div>
+
+<h2>
+Helpful information before the visit.
+</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<details>
+
+<summary>
+Do I need an appointment?
+</summary>
+
+<p>
+The public listing recommends booking an appointment before visiting. The website makes that action prominent.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Where is the clinic?
+</summary>
+
+<p>
+Stall No.-159, Sarat Chandra Avenue / Chandidas Ave, B-Zone, Durgapur, West Bengal. Use the map button above for directions.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+How can I contact the clinic?
+</summary>
+
+<p>
+Call +91 99907 77179 or use the WhatsApp appointment button.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+What treatments are available?
+</summary>
+
+<p>
+Public listings mention services including cleaning, extraction, RCT, crowns, braces, aligners, dentures, bridges, implants, whitening and cosmetic dentistry. Final service wording should be confirmed by the clinic.
+</p>
+
+</details>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="wrap">
+
+
+<div class="footer">
+
+
+<div>
+
+<b>
+🦷 Dr. Talukdar's Dental Care
+</b>
+
+<small>
+B-Zone, Durgapur • Website concept prepared by ANIWAN PRIVATE LIMITED
+</small>
+
+</div>
+
+
+<div class="flinks">
+
+<a href="#services">
+Treatments
+</a>
+
+<a href="#reviews">
+Reviews
+</a>
+
+<a href="#appointment">
+Appointment
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="credit">
+
+<span>
+© 2026 Dr. Talukdar's Dental Care — demo preview
+</span>
+
+<span>
+Designed & developed by ANIWAN PRIVATE LIMITED
+</span>
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+<!-- FLOATING BUTTONS -->
+
+<div class="floating">
+
+<a
+class="floatbtn floatwa"
+data-wa="Hello Dr. Talukdar's Dental Care, I would like to enquire about an appointment."
+aria-label="WhatsApp"
+>
+✆
+</a>
+
+
+<a
+class="floatbtn floatcall"
+href="tel:+919990777179"
+aria-label="Call"
+>
+☎
+</a>
+
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const phone='919990777179';
+
+const wa=t=>
+`https://wa.me/${phone}?text=${encodeURIComponent(t)}`;
+
+
+document
+.querySelectorAll('[data-wa]')
+.forEach(a=>{
+
+a.href=wa(a.dataset.wa);
+
+a.target='_blank';
+
+});
+
+
+const h=document.getElementById('hamb');
+
+const m=document.getElementById('mobile');
+
+
+h.addEventListener('click',()=>{
+
+m.classList.toggle('open');
+
+});
+
+
+m.querySelectorAll('a')
+.forEach(a=>{
+
+a.addEventListener('click',()=>{
+
+m.classList.remove('open');
+
+});
+
+});
+
+
+const toast=t=>{
+
+const x=document.getElementById('toast');
+
+x.textContent=t;
+
+x.classList.add('show');
+
+setTimeout(
+()=>x.classList.remove('show'),
+3000
+);
+
+};
+
+
+document
+.getElementById('form')
+.addEventListener('submit',e=>{
+
+e.preventDefault();
+
+
+const f=new FormData(e.target);
+
+
+const msg=
+`Hello Dr. Talukdar's Dental Care, I would like to request an appointment.
+
+Name: ${f.get('name')}
+Phone: ${f.get('mobile')}
+Treatment: ${f.get('service')}
+Preferred date: ${f.get('date')}
+Message: ${f.get('message')||'—'}`;
+
+
+window.open(
+wa(msg),
+'_blank'
+);
+
+
+toast(
+'Opening WhatsApp with your appointment request…'
+);
+
+});
+
+</script>
+
+</body>
+</html>
