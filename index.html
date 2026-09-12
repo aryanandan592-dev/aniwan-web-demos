@@ -1,699 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ANIWAN PRIVATE LIMITED — digital products, service platforms, mobile applications and modern business solutions.">
+  <title>ANIWAN PRIVATE LIMITED | Digital Products & Technology</title>
 
-<title>ANIWAN PRIVATE LIMITED | Digital Products & Technology</title>
-<meta name="description" content="ANIWAN PRIVATE LIMITED builds smart digital platforms, mobile applications, websites and modern business solutions for real-world services and businesses.">
-<meta name="theme-color" content="#06121d">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#03131d;
+      color:#eef7fb;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    button,a{font:inherit}
+    :root{
+      --bg:#03131d;
+      --panel:#071e2a;
+      --panel2:#082533;
+      --line:rgba(110,222,239,.18);
+      --muted:#9bb1bd;
+      --text:#eef7fb;
+      --cyan:#53e4f5;
+      --cyan2:#11b9d4;
+    }
 
-<style>
-:root{
-  --bg:#06131f;
-  --bg2:#081b2a;
-  --panel:#0b2232;
-  --panel2:#0d293b;
-  --line:rgba(255,255,255,.095);
-  --text:#f4fbfd;
-  --muted:#9aafb9;
-  --soft:#718995;
-  --cyan:#27d5d3;
-  --cyan2:#7af0ee;
-  --blue:#299cff;
-  --max:1180px;
-  --shadow:0 28px 75px rgba(0,0,0,.28);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:Inter,Segoe UI,Arial,sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(circle at 85% 7%,rgba(39,213,211,.085),transparent 28%),
-    radial-gradient(circle at 7% 42%,rgba(41,156,255,.06),transparent 26%),
-    var(--bg);
-  line-height:1.65;
-  overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
-button{font:inherit}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 78% 12%,rgba(29,163,188,.14),transparent 28%),
+        radial-gradient(circle at 12% 52%,rgba(10,116,143,.10),transparent 30%);
+      z-index:-1;
+    }
 
-/* HEADER */
-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(6,19,31,.84);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--line);
-}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand-logo{width:46px;height:46px;flex:0 0 46px}
-.brand-logo svg{width:100%;height:100%;display:block}
-.brand-name{font-size:14px;font-weight:900;letter-spacing:.035em;white-space:nowrap}
-.brand-sub{display:block;color:#7893a0;font-size:9px;letter-spacing:.15em;margin-top:1px}
-.nav-links{display:flex;align-items:center;gap:27px;color:#b9cbd2;font-size:13px;font-weight:750}
-.nav-links a{transition:.2s}
-.nav-links a:hover{color:var(--cyan2)}
-.nav-cta{
-  padding:11px 17px;border:1px solid rgba(122,240,238,.27);
-  border-radius:12px;color:var(--cyan2);background:rgba(39,213,211,.06)
-}
-.menu{
-  display:none;background:transparent;color:#fff;border:1px solid var(--line);
-  border-radius:10px;padding:8px 10px;cursor:pointer
-}
-.mobile-nav{display:none;padding:10px 20px 17px;border-top:1px solid var(--line);background:#071724}
-.mobile-nav.open{display:grid}
-.mobile-nav a{padding:9px 0;color:#c6d7dd;font-size:14px;font-weight:750}
+    .container{width:min(1180px,calc(100% - 64px));margin:auto}
 
-/* HERO */
-.hero{padding:88px 0 92px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:center}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:9px;color:var(--cyan2);
-  font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:900
-}
-.eyebrow:before{content:"";width:25px;height:1px;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
-h1,h2,h3{font-family:Inter,Segoe UI,Arial,sans-serif;letter-spacing:-.045em}
-h1{font-size:clamp(46px,6.3vw,82px);line-height:.99;font-weight:900;margin:19px 0 24px;max-width:850px}
-.gradient{
-  background:linear-gradient(100deg,#fff 8%,#7af0ee 58%,#55b9ff);
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
-.hero-copy{max-width:650px;color:#a7bcc5;font-size:17px}
-.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:31px}
-.btn{
-  min-height:48px;padding:0 18px;border-radius:13px;display:inline-flex;
-  align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:850;transition:.22s
-}
-.primary{background:linear-gradient(135deg,#7af0ee,#27d5d3);color:#04161e;box-shadow:0 12px 35px rgba(39,213,211,.14)}
-.primary:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(39,213,211,.23)}
-.ghost{border:1px solid var(--line);background:rgba(255,255,255,.035);color:#d7e7eb}
-.ghost:hover{border-color:rgba(122,240,238,.3);background:rgba(39,213,211,.055)}
-.proof{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;color:#829aa5;font-size:11px;font-weight:750}
-.proof span{display:flex;gap:7px;align-items:center}.proof b{color:var(--cyan2)}
+    /* NAVIGATION */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(3,19,29,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .brand{display:flex;flex-direction:column;line-height:1.05}
+    .brand strong{
+      font-size:20px;
+      letter-spacing:.02em;
+      font-weight:800;
+    }
+    .brand span{
+      margin-top:7px;
+      color:#829ca9;
+      font-size:11px;
+      letter-spacing:.18em;
+    }
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{
+      color:#c5d3da;
+      font-size:14px;
+      font-weight:700;
+      transition:.2s;
+    }
+    .nav-links a:hover{color:var(--cyan)}
+    .site-link{
+      border:1px solid rgba(83,228,245,.35);
+      padding:11px 19px;
+      border-radius:12px;
+      color:var(--cyan)!important;
+      background:rgba(17,185,212,.04);
+    }
+    .menu-btn{display:none;background:none;border:0;color:#fff;font-size:27px;cursor:pointer}
 
-/* HERO VISUAL */
-.hero-visual{
-  position:relative;min-height:500px;border:1px solid var(--line);border-radius:34px;
-  overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012));
-  box-shadow:var(--shadow)
-}
-.hero-visual:before{
-  content:"";position:absolute;inset:18px;border:1px solid rgba(122,240,238,.075);
-  border-radius:27px
-}
-.grid-lines{
-  position:absolute;inset:0;
-  background-image:linear-gradient(rgba(122,240,238,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(122,240,238,.045) 1px,transparent 1px);
-  background-size:43px 43px;
-  mask-image:linear-gradient(to bottom,#000,transparent 86%)
-}
-.core{
-  position:absolute;width:188px;height:188px;left:50%;top:49%;transform:translate(-50%,-50%);
-  border-radius:50%;display:grid;place-items:center;border:1px solid rgba(122,240,238,.34);
-  background:radial-gradient(circle,rgba(39,213,211,.17),rgba(39,213,211,.02) 60%,transparent 70%);
-  box-shadow:0 0 85px rgba(39,213,211,.12)
-}
-.core-inner{
-  width:104px;height:104px;border-radius:29px;display:grid;place-items:center;
-  border:1px solid rgba(255,255,255,.14);background:rgba(5,24,37,.88);
-  color:var(--cyan2);font-size:21px;font-weight:950;letter-spacing:-.04em
-}
-.node{
-  position:absolute;padding:11px 13px;border:1px solid var(--line);border-radius:14px;
-  background:rgba(7,27,41,.86);backdrop-filter:blur(12px);box-shadow:0 14px 35px rgba(0,0,0,.18);
-  font-size:10px;font-weight:900;color:#dcebed;z-index:2
-}
-.node span{display:block;color:#708e9a;font-size:8px;font-weight:600;margin-top:2px}
-.n1{top:61px;left:29px}.n2{top:113px;right:27px}.n3{bottom:103px;left:32px}.n4{bottom:54px;right:31px}
-.signal{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 17px var(--cyan)}
-.s1{top:31%;left:30%}.s2{top:37%;right:24%}.s3{bottom:24%;left:24%}
-.visual-label{position:absolute;left:28px;bottom:23px;color:#708d99;font-size:9px;letter-spacing:.15em;text-transform:uppercase;font-weight:850}
+    /* HERO */
+    .hero{
+      min-height:490px;
+      border-bottom:1px solid var(--line);
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      min-height:490px;
+    }
+    .hero-main{
+      padding:70px 55px 55px 4px;
+      border-right:1px solid var(--line);
+    }
+    .eyebrow{
+      color:var(--cyan);
+      font-size:11px;
+      letter-spacing:.23em;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+    h1{
+      font-size:clamp(44px,5.2vw,70px);
+      line-height:.98;
+      letter-spacing:-.045em;
+      margin:12px 0 22px;
+      max-width:700px;
+    }
+    h1 .accent{color:var(--cyan)}
+    .hero-copy{
+      color:#b0c3cc;
+      max-width:650px;
+      font-size:16px;
+    }
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:46px;
+      padding:0 24px;
+      border-radius:10px;
+      border:1px solid rgba(126,205,219,.28);
+      background:rgba(255,255,255,.025);
+      color:#edf8fb;
+      font-size:14px;
+      font-weight:800;
+      transition:.2s;
+    }
+    .btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
+    .btn.primary{
+      background:linear-gradient(135deg,#13b9d5,#0b8da7);
+      border-color:transparent;
+      color:#fff;
+    }
 
-/* STATS */
-.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.016)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:26px 20px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat strong{display:block;font-size:19px;letter-spacing:-.025em}
-.stat span{display:block;color:#718995;font-size:10px;margin-top:2px}
+    .hero-side{padding:72px 0 50px 44px}
+    .hero-side p{
+      margin-top:15px;
+      color:#b7c8d0;
+      font-size:15px;
+      max-width:390px;
+    }
+    .focus-grid{
+      margin-top:31px;
+      padding-top:23px;
+      border-top:1px solid var(--line);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px 35px;
+    }
+    .focus-item{
+      border-left:1px solid var(--cyan);
+      padding-left:16px;
+    }
+    .focus-item strong{display:block;font-size:14px}
+    .focus-item span{display:block;color:#8ea6b1;font-size:12px;margin-top:3px}
 
-/* SECTIONS */
-.section{padding:102px 0}
-.head{max-width:720px;margin-bottom:45px}
-.head.center{text-align:center;margin-left:auto;margin-right:auto}
-.head h2{font-size:clamp(34px,4.5vw,53px);line-height:1.06;margin:11px 0 13px}
-.head p{color:var(--muted);font-size:14px}
+    /* SECTION */
+    section{padding:64px 0}
+    .section-head{margin-bottom:25px}
+    .section-head h2{
+      font-size:32px;
+      letter-spacing:-.035em;
+      margin-top:8px;
+    }
+    .section-head p{color:var(--muted);font-size:14px;margin-top:5px}
 
-/* CAPABILITIES */
-.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.cap{
-  position:relative;min-height:205px;padding:26px;border:1px solid var(--line);border-radius:21px;
-  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
-  overflow:hidden;transition:.23s
-}
-.cap:hover{transform:translateY(-4px);border-color:rgba(122,240,238,.23);background:linear-gradient(145deg,rgba(39,213,211,.065),rgba(255,255,255,.012))}
-.cap-no{position:absolute;right:18px;top:13px;color:rgba(122,240,238,.12);font-size:45px;font-weight:950;letter-spacing:-.08em}
-.cap-icon{
-  width:45px;height:45px;border-radius:13px;border:1px solid rgba(122,240,238,.2);
-  display:grid;place-items:center;color:var(--cyan2);background:rgba(39,213,211,.06);
-  margin-bottom:17px;font-size:11px;font-weight:950
-}
-.cap h3{font-size:17px;margin-bottom:7px}.cap p{font-size:12px;color:#8199a4}
+    /* PROJECTS */
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+    .project-card{
+      min-height:246px;
+      padding:27px 24px 21px;
+      border:1px solid var(--line);
+      border-radius:11px;
+      background:linear-gradient(145deg,rgba(8,37,51,.92),rgba(5,25,36,.92));
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      position:relative;
+    }
+    .project-card:after{
+      content:"";
+      position:absolute;
+      width:180px;height:180px;
+      right:-95px;top:-100px;
+      border-radius:50%;
+      background:rgba(83,228,245,.07);
+      pointer-events:none;
+    }
+    .project-type{
+      color:var(--cyan);
+      font-size:10px;
+      letter-spacing:.18em;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+    .project-card h3{
+      font-size:23px;
+      line-height:1.18;
+      letter-spacing:-.025em;
+      margin:14px 0 10px;
+    }
+    .project-card p{
+      color:#a9bdc7;
+      font-size:14px;
+      line-height:1.55;
+      max-width:340px;
+    }
+    .project-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:auto;
+      padding-top:22px;
+    }
+    .small-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:39px;
+      padding:0 14px;
+      border-radius:9px;
+      border:1px solid rgba(126,205,219,.24);
+      background:rgba(255,255,255,.025);
+      color:#eef7fb;
+      font-size:12px;
+      font-weight:800;
+      transition:.2s;
+    }
+    .small-btn:hover{border-color:var(--cyan);color:var(--cyan)}
 
-/* PROJECTS */
-.projects{display:grid;grid-template-columns:1.16fr .84fr;gap:17px}
-.project{
-  position:relative;min-height:385px;border:1px solid var(--line);border-radius:25px;
-  overflow:hidden;background:#091d2b;transition:.23s
-}
-.project:hover{transform:translateY(-4px);border-color:rgba(122,240,238,.24);box-shadow:var(--shadow)}
-.project-bg{
-  position:absolute;inset:0;
-  background:radial-gradient(circle at 75% 20%,rgba(122,240,238,.16),transparent 28%),linear-gradient(145deg,#0d3445,#06151f 72%)
-}
-.project-bg:after{
-  content:"";position:absolute;inset:34px;border:1px solid rgba(255,255,255,.065);border-radius:19px;
-  background:linear-gradient(rgba(122,240,238,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(122,240,238,.035) 1px,transparent 1px);
-  background-size:31px 31px
-}
-.project-ui{
-  position:absolute;z-index:1;width:61%;height:174px;top:75px;right:8%;
-  border:1px solid rgba(255,255,255,.11);border-radius:16px;background:rgba(5,20,30,.78);
-  padding:17px
-}
-.ui-line{height:7px;border-radius:5px;background:rgba(122,240,238,.14);margin-bottom:11px}
-.ui-line.short{width:57%}.ui-pill{display:inline-block;width:65px;height:24px;border-radius:8px;background:rgba(39,213,211,.15);margin-top:7px}
-.project-info{position:absolute;z-index:3;left:27px;right:27px;bottom:24px}
-.project-type{color:var(--cyan2);font-size:9px;text-transform:uppercase;letter-spacing:.16em;font-weight:900}
-.project h3{font-size:27px;margin:7px 0 5px}.project p{color:#9aafb9;font-size:12px;max-width:620px}
-.project-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.mini-btn{
-  display:inline-flex;padding:8px 11px;border:1px solid rgba(255,255,255,.12);
-  border-radius:10px;background:rgba(255,255,255,.035);font-size:10px;font-weight:850
-}
-.mini-btn:hover{color:var(--cyan2);border-color:rgba(122,240,238,.3)}
-.project.small{min-height:385px}.project.small .project-ui{width:65%;right:17%;top:62px;height:143px}
-.upcoming{margin-top:17px;min-height:230px}
+    /* COMPANY */
+    .company-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:46px;
+      align-items:start;
+    }
+    .profile{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(11,29,40,.82);
+      padding:27px 24px;
+    }
+    .profile h3{font-size:22px;letter-spacing:-.03em;margin-bottom:12px}
+    .profile p{color:#aec1ca;font-size:14px}
+    .details{
+      margin-top:20px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      display:grid;
+      grid-template-columns:130px 1fr;
+      gap:9px 15px;
+      font-size:13px;
+    }
+    .details dt{color:#8fa7b2}
+    .details dd{color:#e2edf1}
+    .details a{color:var(--cyan)}
+    .recognition{padding-top:6px}
+    .recognition h2{
+      font-size:31px;
+      line-height:1.08;
+      letter-spacing:-.04em;
+      margin:8px 0 14px;
+    }
+    .recognition p{color:#afc2ca;font-size:14px;max-width:590px}
+    .certificate{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      margin-top:23px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .cert-item{padding:17px 24px;border-right:1px solid var(--line)}
+    .cert-item:last-child{border-right:0}
+    .cert-item span{display:block;color:#91a8b2;font-size:11px}
+    .cert-item strong{display:block;margin-top:3px;font-size:14px}
+    .recognition-note{margin-top:15px!important;font-size:12px!important}
 
-/* COMPANY */
-.company{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
-.company-card{
-  border:1px solid var(--line);border-radius:25px;padding:28px;
-  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));box-shadow:var(--shadow)
-}
-.company-card h3{font-size:21px;margin-bottom:18px}
-.details{display:grid;gap:12px}
-.detail{display:flex;justify-content:space-between;gap:18px;padding-bottom:12px;border-bottom:1px solid var(--line);font-size:11px}
-.detail span{color:#6f8894}.detail strong{text-align:right;color:#d9e8ec}
-.company-copy h2{font-size:clamp(34px,4vw,51px);line-height:1.05;margin:10px 0 16px}
-.company-copy p{color:var(--muted);font-size:14px;margin-bottom:14px}
-.pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}
-.pill{padding:7px 10px;border:1px solid var(--line);border-radius:9px;color:#a8bec7;background:rgba(255,255,255,.03);font-size:9px;font-weight:800}
+    /* CTA */
+    .cta{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(90deg,rgba(9,56,70,.55),rgba(3,29,40,.35));
+    }
+    .cta-inner{
+      min-height:132px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:25px;
+    }
+    .cta h2{font-size:23px;letter-spacing:-.025em}
+    .cta p{color:#a6bbc5;font-size:14px;margin-top:5px}
+    .cta-actions{display:flex;gap:12px;flex-wrap:wrap}
 
-/* CTA */
-.cta{padding:28px 0 100px}
-.cta-box{
-  position:relative;overflow:hidden;text-align:center;padding:64px 35px;border-radius:29px;
-  border:1px solid rgba(122,240,238,.16);
-  background:radial-gradient(circle at 50% 0,rgba(39,213,211,.13),transparent 45%),linear-gradient(145deg,#0d2a3b,#071722);
-  box-shadow:var(--shadow)
-}
-.cta-box h2{font-size:clamp(34px,5vw,55px);line-height:1.05;max-width:760px;margin:11px auto 12px}
-.cta-box p{max-width:650px;margin:auto;color:#91aab4;font-size:13px}
-.cta-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+    /* FOOTER */
+    footer{padding:32px 0 40px}
+    .footer-grid{
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      align-items:end;
+    }
+    .footer-brand strong{font-size:17px}
+    .footer-brand span{
+      display:block;
+      color:#79939e;
+      font-size:10px;
+      letter-spacing:.17em;
+      margin-top:5px;
+    }
+    .footer-right{text-align:right}
+    .footer-links{display:flex;gap:25px;justify-content:flex-end;margin-bottom:12px}
+    .footer-links a{font-size:12px;color:#b7c8cf}
+    .copyright{font-size:12px;color:#718994}
 
-/* FOOTER */
-footer{padding:52px 0 26px;border-top:1px solid var(--line);background:#04101a}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:42px;padding-bottom:40px}
-.footer-brand p{max-width:330px;color:#718a96;font-size:11px;margin-top:10px}
-footer h3{font-size:12px;margin-bottom:12px}
-.footer-links{display:grid;gap:6px}.footer-links a{font-size:11px;color:#718a96}.footer-links a:hover{color:var(--cyan2)}
-.copyright{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:18px;color:#58717d;font-size:9px}
+    /* MOBILE */
+    @media(max-width:900px){
+      .container{width:min(100% - 36px,680px)}
+      .nav{min-height:70px}
+      .nav-links{
+        display:none;
+        position:absolute;
+        left:18px;right:18px;top:70px;
+        padding:17px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:3px;
+        background:#061923;
+        border:1px solid var(--line);
+        border-radius:12px;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{padding:12px 14px}
+      .site-link{text-align:center}
+      .menu-btn{display:block}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-main{
+        padding:58px 0 45px;
+        border-right:0;
+      }
+      .hero-side{
+        padding:38px 0 50px;
+        border-top:1px solid var(--line);
+      }
+      h1{font-size:clamp(43px,12vw,62px)}
+      .projects{grid-template-columns:1fr}
+      .project-card{min-height:240px}
+      .company-grid{grid-template-columns:1fr;gap:35px}
+      .cta-inner{padding:30px 0;align-items:flex-start;flex-direction:column}
+      .footer-grid{align-items:flex-start;flex-direction:column}
+      .footer-right{text-align:left}
+      .footer-links{justify-content:flex-start;flex-wrap:wrap}
+    }
 
-/* MOBILE */
-@media(max-width:950px){
-  .nav-links{display:none}.menu{display:block}
-  .hero-grid,.company{grid-template-columns:1fr}
-  .hero-visual{max-width:720px;width:100%;margin:auto}
-  .cap-grid{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:620px){
-  .container{width:min(var(--max),calc(100% - 28px))}
-  .nav{height:68px}
-  .brand-name{font-size:12px}.brand-sub{font-size:7px}
-  .brand-logo{width:41px;height:41px;flex-basis:41px}
-  .hero{padding:62px 0 70px}
-  h1{font-size:45px}.hero-copy{font-size:15px}
-  .hero-visual{min-height:375px}.core{width:145px;height:145px}.core-inner{width:81px;height:81px;font-size:17px}
-  .node{font-size:8px;padding:9px 10px}.node span{font-size:7px}
-  .n1{top:43px;left:17px}.n2{top:82px;right:16px}.n3{bottom:82px;left:17px}.n4{bottom:42px;right:16px}
-  .stats-grid{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}
-  .section{padding:75px 0}.cap-grid{grid-template-columns:1fr}.cap{min-height:175px}
-  .project,.project.small{min-height:390px}.project-ui{width:70%;right:6%;top:70px}
-  .project-info{left:21px;right:21px}.project h3{font-size:23px}
-  .company{gap:30px}.cta{padding-bottom:75px}.cta-box{padding:50px 20px}
-  .footer-grid{grid-template-columns:1fr}.copyright{flex-direction:column}
-}
-</style>
+    @media(max-width:520px){
+      .container{width:calc(100% - 28px)}
+      .brand strong{font-size:17px}
+      .brand span{font-size:9px}
+      .hero-main{padding-top:46px}
+      .hero-copy{font-size:14px}
+      .actions,.cta-actions{width:100%}
+      .btn{flex:1}
+      .focus-grid{grid-template-columns:1fr;gap:18px}
+      .details{grid-template-columns:1fr;gap:3px}
+      .details dd{margin-bottom:8px}
+      .certificate{grid-template-columns:1fr}
+      .cert-item{border-right:0;border-bottom:1px solid var(--line)}
+      .cert-item:last-child{border-bottom:0}
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <div class="container nav">
-
-    <a class="brand" href="https://aniwan.in/" aria-label="ANIWAN official website">
-      <div class="brand-logo">
-        <!-- ANIWAN mark -->
-        <svg viewBox="0 0 100 100" role="img" aria-label="ANIWAN">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#082a91"/>
-              <stop offset=".55" stop-color="#0648d5"/>
-              <stop offset="1" stop-color="#20cfff"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#g)" d="M18 82 39 25q5-14 18-14h4q12 0 17 12l13 31-18 11-12-29-22 52H18z"/>
-          <path fill="url(#g)" d="M22 69c18-19 37-23 58-35 7-4 11-9 14-16-2 14-8 23-19 31-17 12-32 14-53 20z"/>
-          <path fill="#0bbfff" d="M80 18c3-7 5-10 9-14 0 6 1 9 6 12-5 1-8 3-12 8 1-4 0-5-3-6z"/>
-        </svg>
-      </div>
-      <div>
-        <div class="brand-name">ANIWAN PRIVATE LIMITED</div>
-        <span class="brand-sub">DIGITAL PRODUCTS • TECHNOLOGY</span>
-      </div>
+    <a class="brand" href="#home" aria-label="ANIWAN PRIVATE LIMITED home">
+      <strong>ANIWAN PRIVATE LIMITED</strong>
+      <span>DIGITAL PRODUCTS • TECHNOLOGY</span>
     </a>
 
-    <nav class="nav-links">
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#projects">Projects</a>
       <a href="#company">Company</a>
       <a href="#contact">Contact</a>
-      <a class="nav-cta" href="https://aniwan.in/" target="_blank" rel="noopener">aniwan.in ↗</a>
+      <a class="site-link" href="https://aniwan.in/" target="_blank" rel="noopener">aniwan.in ↗</a>
     </nav>
-
-    <button class="menu" id="menu" aria-label="Open menu">☰</button>
-  </div>
-
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#capabilities">Capabilities</a>
-    <a href="#projects">Projects</a>
-    <a href="#company">Company</a>
-    <a href="#contact">Contact</a>
-    <a href="https://aniwan.in/" target="_blank" rel="noopener">Official website — aniwan.in ↗</a>
   </div>
 </header>
 
+<main id="home">
 
-<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <div class="eyebrow">Building</div>
+        <h1>Smart Digital<br>Products for<br><span class="accent">Real Businesses.</span></h1>
+        <p class="hero-copy">
+          ANIWAN PRIVATE LIMITED creates digital products, service platforms,
+          mobile applications and modern business solutions designed around
+          real users and real-world services.
+        </p>
 
-<section class="hero">
-  <div class="container hero-grid">
-
-    <div>
-      <div class="eyebrow">Technology • Products • Digital Experiences</div>
-
-      <h1>
-        Building <span class="gradient">smart digital products</span>
-        for real-world businesses.
-      </h1>
-
-      <p class="hero-copy">
-        ANIWAN PRIVATE LIMITED creates scalable digital products, smart
-        service platforms, mobile applications and modern business solutions
-        designed around real users and real-world services.
-      </p>
-
-      <div class="actions">
-        <a class="btn primary" href="#projects">Explore projects →</a>
-        <a class="btn ghost" href="mailto:aniwan596@gmail.com">Start a conversation</a>
-      </div>
-
-      <div class="proof">
-        <span><b>✓</b> Product-focused development</span>
-        <span><b>✓</b> Web & mobile solutions</span>
-        <span><b>✓</b> Backend & digital infrastructure</span>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="grid-lines"></div>
-      <div class="signal s1"></div><div class="signal s2"></div><div class="signal s3"></div>
-
-      <div class="node n1">
-        SERVICE PLATFORMS
-        <span>Connecting people & services</span>
-      </div>
-
-      <div class="node n2">
-        MOBILE APPLICATIONS
-        <span>Useful products for users</span>
-      </div>
-
-      <div class="node n3">
-        DIGITAL INFRASTRUCTURE
-        <span>APIs • Auth • Admin • Cloud</span>
-      </div>
-
-      <div class="node n4">
-        BUSINESS SOLUTIONS
-        <span>Designed around real needs</span>
-      </div>
-
-      <div class="core"><div class="core-inner">ANIWAN</div></div>
-      <div class="visual-label">Connected digital ecosystem</div>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="stats">
-  <div class="container stats-grid">
-
-    <div class="stat">
-      <strong>IT Services</strong>
-      <span>DPIIT-recognized industry</span>
-    </div>
-
-    <div class="stat">
-      <strong>Product Development</strong>
-      <span>DPIIT-recognized sector</span>
-    </div>
-
-    <div class="stat">
-      <strong>Web + Mobile</strong>
-      <span>Digital products & experiences</span>
-    </div>
-
-    <div class="stat">
-      <strong>aniwan.in</strong>
-      <span>Official company website</span>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="section" id="capabilities">
-  <div class="container">
-
-    <div class="head">
-      <div class="eyebrow">What we build</div>
-      <h2>Technology designed around the problem, not just the interface.</h2>
-      <p>
-        From customer-facing experiences to the systems behind them,
-        ANIWAN focuses on practical digital products for real services and businesses.
-      </p>
-    </div>
-
-    <div class="cap-grid">
-
-      <article class="cap">
-        <div class="cap-no">01</div>
-        <div class="cap-icon">01</div>
-        <h3>Service Platforms</h3>
-        <p>Smart platforms connecting customers with professionals, local workers and service providers.</p>
-      </article>
-
-      <article class="cap">
-        <div class="cap-no">02</div>
-        <div class="cap-icon">02</div>
-        <h3>Mobile Applications</h3>
-        <p>Android applications focused on usability, growth and business automation.</p>
-      </article>
-
-      <article class="cap">
-        <div class="cap-no">03</div>
-        <div class="cap-icon">03</div>
-        <h3>Web Experiences</h3>
-        <p>Professional websites and digital experiences for businesses and customer-facing products.</p>
-      </article>
-
-      <article class="cap">
-        <div class="cap-no">04</div>
-        <div class="cap-icon">04</div>
-        <h3>APIs & Backend Systems</h3>
-        <p>Application backends, APIs, databases and business logic that power modern digital products.</p>
-      </article>
-
-      <article class="cap">
-        <div class="cap-no">05</div>
-        <div class="cap-icon">05</div>
-        <h3>Admin & Operations</h3>
-        <p>Administrative systems and internal workflows for managing digital operations.</p>
-      </article>
-
-      <article class="cap">
-        <div class="cap-no">06</div>
-        <div class="cap-icon">06</div>
-        <h3>Digital Infrastructure</h3>
-        <p>Authentication, deployment and supporting infrastructure for reliable applications.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="projects" style="padding-top:30px">
-  <div class="container">
-
-    <div class="head center">
-      <div class="eyebrow">Selected work</div>
-      <h2>Products and website experiences.</h2>
-      <p>
-        A growing collection of digital products and business-specific
-        website concepts developed by ANIWAN.
-      </p>
-    </div>
-
-    <div class="projects">
-
-      <article class="project">
-        <div class="project-bg"></div>
-
-        <div class="project-ui">
-          <div class="ui-line"></div>
-          <div class="ui-line short"></div>
-          <div class="ui-line"></div>
-          <span class="ui-pill"></span>
-          <span class="ui-pill" style="margin-left:7px"></span>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore Projects ↓</a>
+          <a class="btn" href="mailto:aniwan596@gmail.com">Contact Us</a>
         </div>
+      </div>
 
-        <div class="project-info">
-          <div class="project-type">Digital Service Platform</div>
-          <h3>fixKro</h3>
-          <p>
-            A service platform helping users connect with local workers,
-            technicians and service professionals quickly and efficiently.
-          </p>
+      <div class="hero-side" id="capabilities">
+        <div class="eyebrow">Our Focus</div>
+        <p>
+          We design and develop websites, mobile apps and digital systems
+          that help businesses work better, serve customers efficiently and
+          grow with technology.
+        </p>
 
-          <div class="project-actions">
-            <a class="mini-btn" href="https://play.google.com/store/apps/details?id=com.fixkro.app&pcampaignid=web_share" target="_blank" rel="noopener">User App ↗</a>
-            <a class="mini-btn" href="https://play.google.com/store/apps/details?id=com.fixkro.serviceapp&pcampaignid=web_share" target="_blank" rel="noopener">Service App ↗</a>
+        <div class="focus-grid">
+          <div class="focus-item">
+            <strong>Service Platforms</strong>
+            <span>Connecting people & services</span>
+          </div>
+          <div class="focus-item">
+            <strong>Digital Infrastructure</strong>
+            <span>APIs • Admin • Cloud</span>
+          </div>
+          <div class="focus-item">
+            <strong>Mobile Applications</strong>
+            <span>Useful products for real users</span>
+          </div>
+          <div class="focus-item">
+            <strong>Business Solutions</strong>
+            <span>Designed around your needs</span>
           </div>
         </div>
-      </article>
+      </div>
+    </div>
+  </section>
 
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Live Projects</div>
+        <h2>Explore Our Website Concepts</h2>
+        <p>Click any project below to experience the website directly in your browser.</p>
+      </div>
 
-      <article class="project small">
-        <div class="project-bg"></div>
+      <div class="projects">
 
-        <div class="project-ui">
-          <div class="ui-line"></div>
-          <div class="ui-line short"></div>
-          <div class="ui-line"></div>
-          <div class="ui-line short"></div>
-          <span class="ui-pill"></span>
-        </div>
+        <article class="project-card">
+          <div class="project-type">Service Platform</div>
+          <h3>fixKro</h3>
+          <p>
+            A service platform designed to help users connect with local
+            workers, technicians and service professionals.
+          </p>
+          <div class="project-actions">
+            <a class="small-btn" href="https://play.google.com/store/apps/details?id=com.fixkro.app&pcampaignid=web_share" target="_blank" rel="noopener">User App →</a>
+            <a class="small-btn" href="https://play.google.com/store/apps/details?id=com.fixkro.serviceapp&pcampaignid=web_share" target="_blank" rel="noopener">Service App →</a>
+          </div>
+        </article>
 
-        <div class="project-info">
+        <article class="project-card">
           <div class="project-type">Business Website Concept</div>
           <h3>Dr. Talukdar's Dental Care</h3>
           <p>
-            A patient-focused clinic website concept built around services,
-            trust, appointment enquiries and direct contact.
+            A modern, patient-focused dental clinic website concept built
+            around services, trust, appointment enquiries and direct contact.
           </p>
-
           <div class="project-actions">
-            <a class="mini-btn" href="demos/dr-taluktars-dental-care/">View live demo →</a>
+            <a class="small-btn" href="./demos/dr-taluktars-dental-care/" target="_blank" rel="noopener">View Live Demo →</a>
           </div>
-        </div>
-      </article>
+        </article>
 
+        <article class="project-card">
+          <div class="project-type" style="color:#a7b8c0">More Coming Soon</div>
+          <h3>Upcoming Projects</h3>
+          <p>
+            More business-specific website concepts and digital products will
+            be added as ANIWAN develops new solutions.
+          </p>
+          <div class="project-actions">
+            <a class="small-btn" href="mailto:aniwan596@gmail.com">Discuss Your Project →</a>
+          </div>
+        </article>
+
+      </div>
     </div>
+  </section>
 
+  <!-- COMPANY -->
+  <section id="company">
+    <div class="container company-grid">
 
-    <article class="project upcoming">
-      <div class="project-bg" style="background:radial-gradient(circle at 80% 20%,rgba(41,156,255,.14),transparent 28%),linear-gradient(145deg,#0b2638,#06151f 72%)"></div>
-
-      <div class="project-info">
-        <div class="project-type">Growing portfolio</div>
-        <h3>More digital experiences are being built.</h3>
+      <div class="profile">
+        <h3>Company profile</h3>
         <p>
-          ANIWAN's portfolio will continue to grow with business websites,
-          software products and service-focused digital systems.
+          ANIWAN PRIVATE LIMITED is an Indian technology company focused on
+          digital products, service platforms, mobile applications and modern
+          business solutions. We work with businesses and organizations to
+          create practical, scalable and user-friendly digital experiences.
         </p>
 
-        <div class="project-actions">
-          <a class="mini-btn" href="mailto:aniwan596@gmail.com">Discuss a project →</a>
+        <dl class="details">
+          <dt>Company Name</dt>
+          <dd>ANIWAN PRIVATE LIMITED</dd>
+
+          <dt>CIN</dt>
+          <dd>U62011BR2026PTC086544</dd>
+
+          <dt>Incorporation Date</dt>
+          <dd>17 July 2026</dd>
+
+          <dt>Industry Focus</dt>
+          <dd>IT Services • Product Development</dd>
+
+          <dt>Official Website</dt>
+          <dd><a href="https://aniwan.in/" target="_blank" rel="noopener">aniwan.in</a></dd>
+
+          <dt>Contact Email</dt>
+          <dd><a href="mailto:aniwan596@gmail.com">aniwan596@gmail.com</a></dd>
+        </dl>
+      </div>
+
+      <div class="recognition">
+        <div class="eyebrow">Recognition</div>
+        <h2>DPIIT Recognized Startup</h2>
+        <p>
+          ANIWAN PRIVATE LIMITED is recognized as a startup by the Department
+          for Promotion of Industry and Internal Trade (DPIIT), Government of
+          India, working in the 'IT Services' industry and 'Product
+          Development' sector.
+        </p>
+
+        <div class="certificate">
+          <div class="cert-item">
+            <span>Certificate No.</span>
+            <strong>DIPP273190</strong>
+          </div>
+          <div class="cert-item">
+            <span>Date of Issue</span>
+            <strong>20-07-2026</strong>
+          </div>
+          <div class="cert-item">
+            <span>Valid Upto</span>
+            <strong>16-07-2036</strong>
+          </div>
         </div>
+
+        <div class="actions">
+          <a class="small-btn" href="mailto:aniwan596@gmail.com?subject=ANIWAN%20Project%20Enquiry">View Certificate →</a>
+        </div>
+
+        <p class="recognition-note">
+          Recognized by the Department for Promotion of Industry and Internal
+          Trade (DPIIT), Government of India.
+        </p>
       </div>
-    </article>
 
-  </div>
-</section>
-
-
-<section class="section" id="company" style="padding-top:50px">
-  <div class="container company">
-
-    <div class="company-card">
-      <h3>Company profile</h3>
-
-      <div class="details">
-        <div class="detail"><span>Legal name</span><strong>ANIWAN PRIVATE LIMITED</strong></div>
-        <div class="detail"><span>Company type</span><strong>Private Limited Company</strong></div>
-        <div class="detail"><span>Incorporated</span><strong>17 July 2026</strong></div>
-        <div class="detail"><span>DPIIT status</span><strong>Recognized Startup</strong></div>
-        <div class="detail"><span>Industry</span><strong>IT Services</strong></div>
-        <div class="detail"><span>Sector</span><strong>Product Development</strong></div>
-        <div class="detail"><span>Certificate</span><strong>DIPP273190</strong></div>
-      </div>
     </div>
+  </section>
 
-
-    <div class="company-copy">
-      <div class="eyebrow">About ANIWAN</div>
-
-      <h2>Technology with a practical purpose.</h2>
-
-      <p>
-        ANIWAN is a technology company focused on creating scalable digital
-        products, smart service platforms and modern business solutions.
-      </p>
-
-      <p>
-        Our work combines product development with web, mobile and digital
-        infrastructure capabilities to turn real-world service requirements
-        into usable technology.
-      </p>
-
-      <div class="pills">
-        <span class="pill">Digital Products</span>
-        <span class="pill">Service Platforms</span>
-        <span class="pill">Android Apps</span>
-        <span class="pill">Web Development</span>
-        <span class="pill">APIs</span>
-        <span class="pill">Backend Systems</span>
-        <span class="pill">Admin Systems</span>
-        <span class="pill">Cloud Deployment</span>
+  <!-- CONTACT CTA -->
+  <section class="cta" id="contact">
+    <div class="container cta-inner">
+      <div>
+        <h2>Have a business website or app in mind?</h2>
+        <p>Let's discuss how ANIWAN can help you build a digital solution designed around your customers and business goals.</p>
       </div>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="cta" id="contact">
-  <div class="container">
-    <div class="cta-box">
-
-      <div class="eyebrow">Let's build something useful</div>
-
-      <h2>Have a business problem that technology can solve?</h2>
-
-      <p>
-        Tell ANIWAN what you are trying to build. We can discuss the product,
-        website, application or digital system around your actual business requirement.
-      </p>
 
       <div class="cta-actions">
-        <a class="btn primary" href="mailto:aniwan596@gmail.com">aniwan596@gmail.com</a>
-        <a class="btn ghost" href="https://aniwan.in/" target="_blank" rel="noopener">Visit aniwan.in ↗</a>
+        <a class="btn primary" href="mailto:aniwan596@gmail.com">Get in Touch</a>
+        <a class="btn" href="https://aniwan.in/" target="_blank" rel="noopener">aniwan.in ↗</a>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
 </main>
 
-
 <footer>
   <div class="container footer-grid">
-
     <div class="footer-brand">
-      <a class="brand" href="https://aniwan.in/">
-        <div class="brand-logo">
-          <svg viewBox="0 0 100 100" aria-hidden="true">
-            <defs>
-              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#082a91"/>
-                <stop offset=".55" stop-color="#0648d5"/>
-                <stop offset="1" stop-color="#20cfff"/>
-              </linearGradient>
-            </defs>
-            <path fill="url(#g2)" d="M18 82 39 25q5-14 18-14h4q12 0 17 12l13 31-18 11-12-29-22 52H18z"/>
-            <path fill="url(#g2)" d="M22 69c18-19 37-23 58-35 7-4 11-9 14-16-2 14-8 23-19 31-17 12-32 14-53 20z"/>
-            <path fill="#0bbfff" d="M80 18c3-7 5-10 9-14 0 6 1 9 6 12-5 1-8 3-12 8 1-4 0-5-3-6z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="brand-name">ANIWAN PRIVATE LIMITED</div>
-          <span class="brand-sub">DIGITAL PRODUCTS • TECHNOLOGY</span>
-        </div>
-      </a>
-
-      <p>
-        Building smart digital platforms for real-world services and businesses.
-      </p>
+      <strong>ANIWAN PRIVATE LIMITED</strong>
+      <span>DIGITAL PRODUCTS • TECHNOLOGY</span>
     </div>
 
-    <div>
-      <h3>Explore</h3>
+    <div class="footer-right">
       <div class="footer-links">
+        <a href="#home">Home</a>
         <a href="#capabilities">Capabilities</a>
         <a href="#projects">Projects</a>
         <a href="#company">Company</a>
-        <a href="https://aniwan.in/" target="_blank" rel="noopener">Official website</a>
+        <a href="mailto:aniwan596@gmail.com">Contact</a>
       </div>
+      <div class="copyright">© 2026 ANIWAN PRIVATE LIMITED. All rights reserved.</div>
     </div>
-
-    <div>
-      <h3>Contact</h3>
-      <div class="footer-links">
-        <a href="mailto:aniwan596@gmail.com">aniwan596@gmail.com</a>
-        <a href="https://aniwan.in/" target="_blank" rel="noopener">aniwan.in</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="container copyright">
-    <span>© 2026 ANIWAN PRIVATE LIMITED. All rights reserved.</span>
-    <span>Official website: aniwan.in</span>
   </div>
 </footer>
 
-
 <script>
-const menu=document.getElementById("menu");
-const mobileNav=document.getElementById("mobileNav");
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
 
-menu.addEventListener("click",()=>{
-  mobileNav.classList.toggle("open");
-});
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
+  });
 
-mobileNav.querySelectorAll("a").forEach(link=>{
-  link.addEventListener("click",()=>mobileNav.classList.remove("open"));
-});
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuBtn.textContent = "☰";
+    });
+  });
 </script>
 
 </body>
