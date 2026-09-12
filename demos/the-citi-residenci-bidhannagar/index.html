@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="The Citi Residenci Hotel, Bidhannagar — an advanced hospitality website concept by ANIWAN PRIVATE LIMITED.">
+<title>The Citi Residenci | Bidhannagar, Durgapur</title>
+<style>
+:root{
+ --ink:#172326;--deep:#102022;--cream:#f6f1e8;--paper:#fffdf9;--gold:#b78a4a;
+ --gold2:#d6b478;--muted:#687578;--line:#ddd4c6;--soft:#ece5d9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+body.lock{overflow:hidden}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.container{width:min(1180px,calc(100% - 56px));margin:auto}
+.eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;font-weight:800;color:var(--gold)}
+.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 21px;border:1px solid var(--line);border-radius:4px;font-size:12px;font-weight:800;transition:.25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.dark{background:var(--deep);border-color:var(--deep);color:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.outline-light{border-color:rgba(255,255,255,.35);color:#fff}
+
+/* NAV */
+header{position:fixed;z-index:100;top:0;left:0;right:0;background:rgba(16,32,34,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.12);color:#fff}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{width:36px;height:36px;border:1px solid var(--gold2);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-family:Georgia,serif;font-size:15px}
+.brand-name{font-family:Georgia,serif;font-size:16px}
+.brand-sub{display:block;font-size:8px;letter-spacing:.18em;color:#aebbbb;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:25px}
+.nav-links a{font-size:11px;font-weight:700;color:#dce5e4}
+.nav-links a:hover{color:var(--gold2)}
+.nav-book{padding:10px 16px!important;background:var(--gold);border-radius:4px;color:#fff!important}
+.menu{display:none;border:0;background:none;color:#fff;font-size:26px}
+
+/* HERO */
+.hero{min-height:800px;background:var(--deep);color:#fff;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{filter:brightness(.48);object-position:center}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,24,26,.94) 0%,rgba(8,24,26,.72) 43%,rgba(8,24,26,.18) 100%),linear-gradient(0deg,rgba(8,24,26,.8),transparent 50%)}
+.hero-inner{position:relative;z-index:2;min-height:800px;display:flex;align-items:center;padding-top:76px}
+.hero-copy{max-width:680px}
+.hero h1{font-size:clamp(52px,7vw,88px);line-height:.94;letter-spacing:-.055em;margin:17px 0 25px}
+.hero h1 em{color:var(--gold2);font-style:normal}
+.hero-copy>p{max-width:570px;color:#d1d9d8;font-size:15px}
+.hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:29px}
+.hero-meta{display:flex;gap:32px;margin-top:45px;padding-top:21px;border-top:1px solid rgba(255,255,255,.18);max-width:650px}
+.hero-meta strong{display:block;font-family:Georgia,serif;font-size:23px;font-weight:400}
+.hero-meta span{font-size:10px;color:#aebbbb}
+.hero-card{position:absolute;z-index:3;right:5vw;bottom:35px;width:285px;background:rgba(255,253,249,.96);color:var(--ink);padding:22px;box-shadow:0 18px 55px rgba(0,0,0,.25)}
+.hero-card .mini{font-size:9px;letter-spacing:.17em;color:var(--gold);font-weight:800;text-transform:uppercase}
+.hero-card h3{font-family:Georgia,serif;font-size:25px;font-weight:400;margin:7px 0 5px}
+.hero-card p{font-size:11px;color:var(--muted)}
+.hero-card .card-line{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:10px;margin-top:13px;font-size:10px}
+
+/* INTRO */
+.intro{padding:95px 0;background:var(--paper)}
+.intro-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px}
+.intro h2{font-family:Georgia,serif;font-size:clamp(37px,4.2vw,55px);line-height:1.05;font-weight:400;letter-spacing:-.035em}
+.intro-copy p{font-size:15px;color:var(--muted);max-width:680px}
+.intro-copy p+p{margin-top:13px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}
+.pill{padding:8px 11px;border:1px solid var(--line);font-size:10px;color:#596567;background:var(--cream)}
+
+/* ROOMS */
+.section{padding:88px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}
+.section-head h2{font-family:Georgia,serif;font-size:clamp(37px,4.2vw,54px);line-height:1.05;font-weight:400;letter-spacing:-.035em;margin-top:7px}
+.section-head>p{max-width:450px;color:var(--muted);font-size:13px}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.room{background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.room-photo{height:310px;position:relative}
+.room-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.35),transparent 50%)}
+.room-tag{position:absolute;z-index:2;left:17px;bottom:15px;color:#fff;font-size:9px;letter-spacing:.17em;text-transform:uppercase;font-weight:800}
+.room-body{padding:24px}
+.room h3{font-family:Georgia,serif;font-size:29px;font-weight:400}
+.room-meta{display:flex;gap:18px;flex-wrap:wrap;color:#778284;font-size:11px;margin:6px 0 13px}
+.room p{color:var(--muted);font-size:13px}
+.features{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.features span{background:#f1ece3;padding:6px 8px;border-radius:3px;color:#596668;font-size:9px}
+.room-foot{display:flex;align-items:center;justify-content:space-between;margin-top:22px;padding-top:15px;border-top:1px solid var(--line)}
+.room-foot span{font-size:10px;color:#7d8889}
+
+/* DARK DINING */
+.dark{background:var(--deep);color:#fff}
+.dining{display:grid;grid-template-columns:1.02fr .98fr;gap:55px;align-items:center}
+.dining-photo{height:510px;position:relative}
+.dining-photo img{object-position:center}
+.dining-photo:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.18)}
+.dining-copy h2{font-family:Georgia,serif;font-size:55px;font-weight:400;line-height:1.02;margin:9px 0 17px}
+.dining-copy>p{color:#c0ccca;font-size:14px;max-width:520px}
+.dining-info{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:29px;padding-top:20px;border-top:1px solid rgba(255,255,255,.17)}
+.dining-info strong{font-size:11px}.dining-info span{display:block;color:#9eacab;font-size:10px;margin-top:3px}
+.dark .btn{margin-top:25px}
+
+/* EVENTS */
+.events{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:13px}
+.event{min-height:330px;background:var(--paper);border:1px solid var(--line);padding:25px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.event:first-child{background:#e9dfcf}
+.event-num{font-size:9px;letter-spacing:.2em;color:var(--gold);font-weight:800}
+.event h3{font-family:Georgia,serif;font-size:31px;font-weight:400;margin:35px 0 9px}
+.event p{font-size:12px;color:var(--muted)}
+.event-bottom{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:10px;color:#5f6c6e}
+.event-big{font-family:Georgia,serif;font-size:65px;line-height:1;color:rgba(183,138,74,.2);position:absolute;right:13px;bottom:5px}
+
+/* FACILITIES */
+.facility-wrap{background:var(--paper);border:1px solid var(--line)}
+.facility-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.facility{padding:23px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facility:nth-child(4n){border-right:0}
+.facility strong{font-size:12px}
+.facility span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+
+/* GALLERY */
+.gallery-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filter{border:1px solid var(--line);background:transparent;padding:7px 11px;font-size:10px;color:#687477;cursor:pointer}
+.filter.active,.filter:hover{background:var(--deep);color:#fff;border-color:var(--deep)}
+.gallery{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-auto-rows:205px;gap:9px}
+.photo{position:relative;overflow:hidden;cursor:pointer;background:#ddd5c8}
+.photo.large{grid-row:span 2}
+.photo img{transition:.55s}
+.photo:hover img{transform:scale(1.05)}
+.photo:after{content:"View photo";position:absolute;right:10px;bottom:10px;padding:5px 8px;background:rgba(16,32,34,.78);color:#fff;font-size:8px;opacity:0;transition:.2s}
+.photo:hover:after{opacity:1}
+.photo.hidden{display:none}
+.photo-label{position:absolute;left:11px;top:10px;z-index:2;background:rgba(255,253,249,.9);padding:5px 7px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(4,14,16,.94);z-index:200;display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(1100px,94vw);max-height:85vh;width:auto;height:auto;object-fit:contain}
+.lb-close,.lb-prev,.lb-next{position:absolute;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;width:43px;height:43px;cursor:pointer;border-radius:50%}
+.lb-close{right:24px;top:20px;font-size:21px}.lb-prev{left:22px;top:50%;transform:translateY(-50%)}.lb-next{right:22px;top:50%;transform:translateY(-50%)}
+.lb-caption{position:absolute;bottom:19px;color:#d8dfde;font-size:11px}
+
+/* LOCATION */
+.location{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:stretch}
+.location-copy h2{font-family:Georgia,serif;font-size:52px;font-weight:400;line-height:1.04}
+.location-copy>p{color:var(--muted);font-size:14px;margin:15px 0 23px}
+.contact-list{display:grid;gap:13px}
+.contact-row{display:grid;grid-template-columns:85px 1fr;border-bottom:1px solid var(--line);padding-bottom:11px;font-size:11px}
+.contact-row span{color:#7c8889}.contact-row strong{font-weight:600}
+.contact-row a{color:#9b7137}
+.map{min-height:390px;background:#d8d1c5;position:relative;overflow:hidden;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:390px;border:0;filter:grayscale(.8) sepia(.1)}
+.map-link{position:absolute;right:14px;bottom:14px;background:var(--deep);color:#fff;padding:11px 14px;font-size:10px;font-weight:800}
+
+/* BOOKING */
+.booking{background:#e9dfcf}
+.booking-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:center}
+.booking h2{font-family:Georgia,serif;font-size:50px;font-weight:400;line-height:1.03}
+.booking p{color:#657174;font-size:13px;margin-top:12px}
+.form{background:var(--paper);padding:26px;border:1px solid var(--line)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.field{display:flex;flex-direction:column;gap:4px}.field.full{grid-column:1/-1}
+.field label{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#7a8586;font-weight:800}
+.field input,.field select,.field textarea{border:1px solid #d7cec0;background:#fbf9f5;padding:11px 10px;border-radius:3px;outline:0;color:var(--ink)}
+.field textarea{min-height:90px;resize:vertical}
+.form button{margin-top:12px;width:100%;height:45px;border:0;background:var(--deep);color:#fff;font-weight:800;border-radius:3px;cursor:pointer}
+.form-note{text-align:center;font-size:9px;color:#899394;margin-top:8px}
+
+/* FOOTER */
+footer{background:#0e1b1d;color:#fff;padding:42px 0 72px}
+.footer{display:flex;justify-content:space-between;gap:35px}
+.footer h3{font-family:Georgia,serif;font-weight:400;font-size:19px}.footer small{display:block;color:#7e9090;font-size:9px;letter-spacing:.15em;margin-top:4px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:flex-end}.footer-links a{font-size:10px;color:#bac5c4}
+.footer p{font-size:9px;color:#627476;margin-top:13px;text-align:right}
+
+/* MOBILE STICKY */
+.mobile-cta{display:none}
+
+/* RESPONSIVE */
+@media(max-width:950px){
+.container{width:calc(100% - 34px)}
+.nav-links{display:none;position:absolute;top:76px;left:17px;right:17px;background:#102022;border:1px solid rgba(255,255,255,.14);padding:12px;flex-direction:column;align-items:stretch;gap:2px}
+.nav-links.open{display:flex}.nav-links a{padding:11px}.menu{display:block}
+.hero-card{display:none}.hero-inner{min-height:720px}
+.intro-grid,.dining,.location,.booking-grid{grid-template-columns:1fr;gap:35px}
+.rooms{grid-template-columns:1fr}
+.events{grid-template-columns:1fr}
+.event{min-height:270px}
+.facility-grid{grid-template-columns:1fr 1fr}.facility:nth-child(4n){border-right:1px solid var(--line)}
+.facility:nth-child(2n){border-right:0}
+.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:190px}.photo.large{grid-row:span 2}
+.footer{flex-direction:column}.footer-links{justify-content:flex-start}.footer p{text-align:left}
+}
+@media(max-width:560px){
+.container{width:calc(100% - 26px)}
+.hero{min-height:720px}.hero-inner{min-height:720px}.hero h1{font-size:51px}.hero-meta{gap:18px}
+.hero-actions .btn{width:100%}
+.section{padding:65px 0}.intro{padding:65px 0}
+.section-head,.gallery-head{display:block}.section-head>p{margin-top:13px}
+.dining-copy h2,.location-copy h2,.booking h2{font-size:40px}.dining-photo{height:350px}
+.facility-grid{grid-template-columns:1fr}.facility,.facility:nth-child(2n){border-right:0}
+.gallery{grid-template-columns:1fr;grid-auto-rows:240px}.photo.large{grid-row:auto}
+.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+.mobile-cta{display:grid;grid-template-columns:1fr 1fr;position:fixed;z-index:90;bottom:0;left:0;right:0;height:54px;background:#102022;box-shadow:0 -5px 20px rgba(0,0,0,.2)}
+.mobile-cta a{display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800;border-right:1px solid rgba(255,255,255,.12)}
+.mobile-cta a:last-child{background:var(--gold);border:0}
+footer{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+  <a class="brand" href="#home">
+    <span class="brand-mark">C</span>
+    <span><span class="brand-name">The Citi Residenci</span><span class="brand-sub">Bidhannagar • Durgapur</span></span>
+  </a>
+  <button class="menu" id="menu" aria-label="Menu">☰</button>
+  <nav class="nav-links" id="nav">
+    <a href="#rooms">Rooms</a><a href="#dining">Dining</a><a href="#events">Events</a><a href="#facilities">Facilities</a><a href="#gallery">Gallery</a><a href="#location">Location</a>
+    <a class="nav-book" href="#booking">Book / Enquire</a>
+  </nav>
+</div>
+</header>
+
+<main id="home">
+
+<section class="hero">
+<div class="hero-bg">
+  <img src="https://rukmini-ct.flixcart.com/w_2048%2Cf_auto%2Cq_auto/ct-hotel-images/places/hotels/cms/4561/4561265/images/image_4561265_3a930d76-c025-4624-9e53-18dd64bc9da1.jpeg" alt="The Citi Residenci hotel">
+</div>
+<div class="container hero-inner">
+  <div class="hero-copy">
+    <div class="eyebrow">The Citi Residenci • Bidhannagar</div>
+    <h1>Comfort that feels <em>considered.</em></h1>
+    <p>A refined stay in Bidhannagar, Durgapur — with comfortable rooms, Half Moon Bay dining, 24-hour in-room dining and flexible event spaces.</p>
+    <div class="hero-actions"><a class="btn gold" href="#booking">Book Your Stay →</a><a class="btn outline-light" href="#gallery">Explore Photos</a></div>
+    <div class="hero-meta">
+      <div><strong>200–241</strong><span>sq. ft. room options</span></div>
+      <div><strong>24/7</strong><span>in-room dining</span></div>
+      <div><strong>3</strong><span>pillar-less event halls</span></div>
+    </div>
+  </div>
+</div>
+<div class="hero-card">
+  <div class="mini">Bidhannagar, Durgapur</div>
+  <h3>Your pause button in the city.</h3>
+  <p>Close to the railway station and within easy reach of key city destinations.</p>
+  <div class="card-line"><span>Guest enquiries</span><strong>+91 77 9748 7777</strong></div>
+</div>
+</section>
+
+<section class="intro">
+<div class="container intro-grid">
+  <div><div class="eyebrow">A thoughtful stay</div><h2>Stay close. Slow down. Enjoy the city.</h2></div>
+  <div class="intro-copy">
+    <p>The Citi Residenci, Bidhannagar is tucked into a quiet corner of Pump House More, designed around convenience for business travellers, families and short getaways.</p>
+    <p>The current property information highlights Standard and Deluxe rooms, Half Moon Bay, 24-hour in-room dining, three pillar-less banquet halls and practical guest facilities. citeturn1search1turn1search2turn1search6</p>
+    <div class="pills"><span class="pill">Wi-Fi</span><span class="pill">Free Parking</span><span class="pill">Air-conditioning</span><span class="pill">24-hour Room Service</span><span class="pill">Breakfast</span><span class="pill">Travel Assistance</span></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="rooms">
+<div class="container">
+<div class="section-head"><div><div class="eyebrow">Rooms & Suites</div><h2>A room for the way you travel.</h2></div><p>Simple, comfortable accommodation with the essentials for work trips, solo stays and quick getaways.</p></div>
+<div class="rooms">
+<article class="room">
+ <div class="room-photo"><img src="https://images.trvl-media.com/lodging/113000000/112570000/112567700/112567635/c4c86fde.jpg?impolicy=resizecrop&ra=fill&rh=900&rw=1200" alt="Deluxe room"><span class="room-tag">Deluxe Room</span></div>
+ <div class="room-body"><h3>Deluxe Room</h3><div class="room-meta"><span>240 sq. ft.</span><span>Twin / King</span><span>Up to 2 guests</span></div><p>A comfortable upgrade with flexible bedding, 32” television, tea and coffee facilities and 24-hour room service.</p><div class="features"><span>Wi-Fi</span><span>Minibar</span><span>In-room safe</span><span>Air-conditioning</span><span>Room service</span></div><div class="room-foot"><span>Current official room information</span><a class="btn dark" href="#booking">Enquire →</a></div></div>
+</article>
+<article class="room">
+ <div class="room-photo"><img src="https://images.trvl-media.com/lodging/113000000/112570000/112567700/112567635/c4c86fde.jpg?impolicy=resizecrop&ra=fill&rh=900&rw=1200" alt="Standard room concept"><span class="room-tag">Standard Room</span></div>
+ <div class="room-body"><h3>Standard Room</h3><div class="room-meta"><span>200 sq. ft.</span><span>Twin beds</span><span>Solo / business</span></div><p>Compact yet complete — a practical option for business stops and solo getaways, with Wi-Fi and 24-hour room service.</p><div class="features"><span>Wi-Fi</span><span>TV</span><span>Telephone</span><span>Tea & coffee</span><span>Wardrobe</span></div><div class="room-foot"><span>Current official room information</span><a class="btn dark" href="#booking">Enquire →</a></div></div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section dark" id="dining">
+<div class="container dining">
+<div class="dining-photo"><img src="https://assets.simplotel.com/simplotel/image/upload/w_5000%2Ch_3333/x_0%2Cy_77%2Cw_5000%2Ch_3179%2Cr_0%2Cc_crop/q_80%2Cw_1600%2Cdpr_1%2Cf_auto%2Cfl_progressive%2Cc_limit/the-citi-residenci-hotel-banskopa/Restaurant_%283%29_a3576f69" alt="Citi Residenci restaurant"></div>
+<div class="dining-copy"><div class="eyebrow">Half Moon Bay</div><h2>Flavours made to be shared.</h2><p>Half Moon Bay is the fine-dining restaurant at the Bidhannagar property. The current hotel page describes Indian, Chinese and continental cuisine, with a 60-guest seating capacity and service from 7 AM to 11 PM. 24-hour in-room dining is also available. citeturn1search9turn1search6</p>
+<div class="dining-info"><div><strong>60 guests</strong><span>Seating capacity</span></div><div><strong>7 AM – 11 PM</strong><span>Restaurant hours</span></div><div><strong>7:30 – 10:30 AM</strong><span>Breakfast buffet</span></div><div><strong>24 hours</strong><span>In-room dining</span></div></div><a class="btn gold" href="#booking">Enquire About Dining →</a></div>
+</div>
+</section>
+
+<section class="section" id="events">
+<div class="container">
+<div class="section-head"><div><div class="eyebrow">Weddings & Events</div><h2>Give your occasion room to breathe.</h2></div><p>Three pillar-less halls, flexible setups and essential AV support for celebrations, conferences and meetings.</p></div>
+<div class="events">
+<article class="event"><div class="event-num">HALL 01</div><h3>Grand celebrations</h3><p>4,000 sq. ft. pillar-less space designed for weddings, conferences and large celebrations.</p><div class="event-bottom">Up to 250 guests • Wi-Fi • Projector • A/V • AC</div><div class="event-big">01</div></article>
+<article class="event"><div class="event-num">HALL 02</div><h3>Mid-size moments</h3><p>1,400 sq. ft. flexible venue for seminars, parties and gatherings.</p><div class="event-bottom">Up to 150 guests • Wi-Fi • A/V • Climate control</div><div class="event-big">02</div></article>
+<article class="event"><div class="event-num">HALL 03</div><h3>Focused gatherings</h3><p>1,400 sq. ft. pillar-less space for board meetings and intimate celebrations.</p><div class="event-bottom">Up to 100 guests • Wi-Fi • A/V • AC</div><div class="event-big">03</div></article>
+</div>
+<div style="margin-top:23px"><a class="btn dark" href="#booking">Plan Your Event →</a></div>
+</div>
+</section>
+
+<section class="section" id="facilities" style="padding-top:0">
+<div class="container">
+<div class="section-head"><div><div class="eyebrow">Facilities</div><h2>Small details. Easier stays.</h2></div><p>Facilities currently listed for the Bidhannagar property include the following. citeturn1search0</p></div>
+<div class="facility-wrap"><div class="facility-grid">
+<div class="facility"><strong>Fully-automated rooms</strong><span>Smart room comfort</span></div>
+<div class="facility"><strong>Air-conditioning</strong><span>Climate control</span></div>
+<div class="facility"><strong>Wi-Fi Internet</strong><span>Complimentary connectivity</span></div>
+<div class="facility"><strong>Flat-screen TV</strong><span>In-room entertainment</span></div>
+<div class="facility"><strong>Tea & coffee maker</strong><span>In-room convenience</span></div>
+<div class="facility"><strong>Complimentary breakfast</strong><span>Start the day well</span></div>
+<div class="facility"><strong>Stocked minibar</strong><span>In-room refreshment</span></div>
+<div class="facility"><strong>24-hour room service</strong><span>Any-time comfort</span></div>
+<div class="facility"><strong>Laundry service</strong><span>For longer stays</span></div>
+<div class="facility"><strong>In-room safe</strong><span>Added peace of mind</span></div>
+<div class="facility"><strong>24-hour travel assistance</strong><span>Help when you need it</span></div>
+<div class="facility"><strong>Free parking</strong><span>On-site convenience</span></div>
+</div></div>
+</div>
+</section>
+
+<section class="section" id="gallery">
+<div class="container">
+<div class="gallery-head"><div><div class="eyebrow">Photo Collection</div><h2 class="serif" style="font-size:48px;margin-top:7px">See the experience.</h2></div>
+<div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="stay">Stay</button><button class="filter" data-filter="dining">Dining</button><button class="filter" data-filter="property">Property</button></div></div>
+<div class="gallery">
+<div class="photo large" data-cat="property"><img src="https://rukmini-ct.flixcart.com/w_2048%2Cf_auto%2Cq_auto/ct-hotel-images/places/hotels/cms/4561/4561265/images/image_4561265_3a930d76-c025-4624-9e53-18dd64bc9da1.jpeg" alt="Property exterior"><span class="photo-label">Property</span></div>
+<div class="photo" data-cat="stay"><img src="https://images.trvl-media.com/lodging/113000000/112570000/112567700/112567635/c4c86fde.jpg?impolicy=resizecrop&ra=fill&rh=800&rw=1000" alt="Guest room"><span class="photo-label">Stay</span></div>
+<div class="photo" data-cat="dining"><img src="https://assets.simplotel.com/simplotel/image/upload/w_5000%2Ch_3333/x_0%2Cy_77%2Cw_5000%2Ch_3179%2Cr_0%2Cc_crop/q_80%2Cw_1600%2Cdpr_1%2Cf_auto%2Cfl_progressive%2Cc_limit/the-citi-residenci-hotel-banskopa/Restaurant_%283%29_a3576f69" alt="Dining"><span class="photo-label">Dining</span></div>
+<div class="photo" data-cat="property"><img src="https://images.trvl-media.com/lodging/113000000/112570000/112567700/112567635/c4c86fde.jpg?impolicy=resizecrop&ra=fill&rh=800&rw=1000" alt="Interior"><span class="photo-label">Interior</span></div>
+<div class="photo" data-cat="dining"><img src="https://assets.simplotel.com/simplotel/image/upload/w_5000%2Ch_3333/x_0%2Cy_77%2Cw_5000%2Ch_3179%2Cr_0%2Cc_crop/q_80%2Cw_1600%2Cdpr_1%2Cf_auto%2Cfl_progressive%2Cc_limit/the-citi-residenci-hotel-banskopa/Restaurant_%283%29_a3576f69" alt="Restaurant ambience"><span class="photo-label">Dining</span></div>
+<div class="photo" data-cat="stay"><img src="https://images.trvl-media.com/lodging/113000000/112570000/112567700/112567635/c4c86fde.jpg?impolicy=resizecrop&ra=fill&rh=800&rw=1000" alt="Room detail"><span class="photo-label">Stay</span></div>
+</div>
+<p style="font-size:10px;color:#8a9394;margin-top:12px">Demo note: imagery is sourced from publicly indexed hotel/property imagery and is for concept presentation. Confirm image ownership/licensing before production deployment.</p>
+</div>
+</section>
+
+<section class="section" id="location">
+<div class="container location">
+<div class="location-copy"><div class="eyebrow">Location & Contact</div><h2>Easy to find. Easy to reach.</h2><p>The property is at Pump House More, Bidhannagar, Durgapur, close to the railway station and within reach of the city's key destinations. citeturn1search1</p>
+<div class="contact-list">
+<div class="contact-row"><span>Address</span><strong>2 A, A-1-N Pump House More, Corner Sector, Bidhannagar, Durgapur, West Bengal – 713212</strong></div>
+<div class="contact-row"><span>Phone</span><strong><a href="tel:+917797487777">+91 77 9748 7777</a></strong></div>
+<div class="contact-row"><span>Email</span><strong><a href="mailto:reservations.bdn@citiresidenci.com">reservations.bdn@citiresidenci.com</a></strong></div>
+<div class="contact-row"><span>Directions</span><strong><a href="https://www.google.com/maps/search/?api=1&query=The+Citi+Residenci+Bidhannagar+Durgapur" target="_blank">Open Google Maps →</a></strong></div>
+</div></div>
+<div class="map"><iframe loading="lazy" src="https://www.google.com/maps?q=The+Citi+Residenci+Bidhannagar+Durgapur&output=embed"></iframe><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=The+Citi+Residenci+Bidhannagar+Durgapur" target="_blank">GET DIRECTIONS →</a></div>
+</div>
+</section>
+
+<section class="section booking" id="booking">
+<div class="container booking-grid">
+<div><div class="eyebrow">Stay / Event / Dining</div><h2>Tell us what you need.</h2><p>This demo enquiry flow prepares a message for the hotel's reservation email. It is not connected to a live booking engine.</p></div>
+<form class="form" id="form">
+<div class="form-grid">
+<div class="field"><label>Name</label><input id="name" required placeholder="Your name"></div>
+<div class="field"><label>Phone</label><input id="phone" required placeholder="+91"></div>
+<div class="field"><label>Email</label><input id="email" type="email" placeholder="you@example.com"></div>
+<div class="field"><label>Requirement</label><select id="type"><option>Room booking</option><option>Wedding / Event</option><option>Dining</option><option>Corporate stay</option><option>Group booking</option></select></div>
+<div class="field full"><label>Message</label><textarea id="msg" placeholder="Dates, guests and your requirement"></textarea></div>
+</div>
+<button type="submit">Send Enquiry →</button>
+<div class="form-note">Demo interaction • opens your email application</div>
+</form>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container footer">
+<div><h3>The Citi Residenci, Bidhannagar</h3><small>2 A, A-1-N PUMP HOUSE MORE • DURGAPUR • WEST BENGAL</small></div>
+<div><div class="footer-links"><a href="#home">Home</a><a href="#rooms">Rooms</a><a href="#dining">Dining</a><a href="#events">Events</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div><p>Website concept by ANIWAN PRIVATE LIMITED • 2026</p></div>
+</div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+<button class="lb-close" id="lbClose">×</button><button class="lb-prev" id="lbPrev">‹</button><img id="lbImg" alt=""><button class="lb-next" id="lbNext">›</button><div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<div class="mobile-cta"><a href="tel:+917797487777">CALL HOTEL</a><a href="#booking">BOOK / ENQUIRE</a></div>
+
+<script>
+const menu=document.getElementById("menu"),nav=document.getElementById("nav");
+menu.addEventListener("click",()=>{nav.classList.toggle("open");menu.textContent=nav.classList.contains("open")?"×":"☰"});
+document.querySelectorAll("#nav a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.textContent="☰"}));
+
+/* Gallery filtering */
+const filters=document.querySelectorAll(".filter"),photos=[...document.querySelectorAll(".photo")];
+filters.forEach(btn=>btn.addEventListener("click",()=>{
+ filters.forEach(x=>x.classList.remove("active"));btn.classList.add("active");
+ const f=btn.dataset.filter;
+ photos.forEach(p=>p.classList.toggle("hidden",f!=="all"&&p.dataset.cat!==f));
+}));
+
+/* Gallery lightbox */
+const lb=document.getElementById("lightbox"),lbImg=document.getElementById("lbImg"),lbCap=document.getElementById("lbCaption");
+let current=0;
+function visiblePhotos(){return photos.filter(p=>!p.classList.contains("hidden"))}
+function openPhoto(p){current=visiblePhotos().indexOf(p);lbImg.src=p.querySelector("img").src;lbImg.alt=p.querySelector("img").alt;lbCap.textContent=p.querySelector("img").alt;lb.classList.add("open");document.body.classList.add("lock")}
+function show(n){const list=visiblePhotos();current=(n+list.length)%list.length;const p=list[current];lbImg.src=p.querySelector("img").src;lbImg.alt=p.querySelector("img").alt;lbCap.textContent=p.querySelector("img").alt}
+photos.forEach(p=>p.addEventListener("click",()=>openPhoto(p)));
+document.getElementById("lbClose").onclick=()=>{lb.classList.remove("open");document.body.classList.remove("lock")};
+document.getElementById("lbPrev").onclick=()=>show(current-1);
+document.getElementById("lbNext").onclick=()=>show(current+1);
+lb.addEventListener("click",e=>{if(e.target===lb){lb.classList.remove("open");document.body.classList.remove("lock")}});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")document.getElementById("lbClose").click();if(e.key==="ArrowLeft")show(current-1);if(e.key==="ArrowRight")show(current+1)});
+
+/* Enquiry */
+document.getElementById("form").addEventListener("submit",e=>{
+ e.preventDefault();
+ const n=document.getElementById("name").value.trim(),p=document.getElementById("phone").value.trim(),em=document.getElementById("email").value.trim(),t=document.getElementById("type").value,m=document.getElementById("msg").value.trim();
+ const subject=encodeURIComponent(t+" enquiry — The Citi Residenci, Bidhannagar");
+ const body=encodeURIComponent("Name: "+n+"\nPhone: "+p+"\nEmail: "+em+"\nRequirement: "+t+"\n\nMessage:\n"+m);
+ location.href="mailto:reservations.bdn@citiresidenci.com?subject="+subject+"&body="+body;
+});
+</script>
+</body>
+</html>
